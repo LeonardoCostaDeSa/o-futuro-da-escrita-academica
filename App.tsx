@@ -11,6 +11,7 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import PainDivider from './components/PainDivider';
 
 const App: React.FC = () => {
   return (
@@ -18,11 +19,32 @@ const App: React.FC = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+
+        <PainDivider
+          message="Será que vou conseguir entregar a tempo?"
+          caption="o que passa pela cabeça de quem escreve sem estrutura"
+        />
+
         <Features />
         <Modules />
+
+        <PainDivider
+          message="Meu orientador sumiu. A defesa está chegando."
+        />
+
         <Instructor />
         <Audience />
+
+        <PainDivider
+          message="Parece que só eu não estou conseguindo."
+        />
+
         <Testimonials />
+
+        <PainDivider
+          message="Será que a banca vai me reprovar?"
+        />
+
         <Pricing />
         <FAQ />
         <FinalCTA />
