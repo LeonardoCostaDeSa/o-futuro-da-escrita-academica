@@ -80,9 +80,37 @@ const Pricing: React.FC = () => {
               </li>
             ))}
           </ul>
+
+          {/* Formas de pagamento */}
+          <div className="mt-8 pt-6 border-t border-white/5">
+            <p className="text-[9px] font-black text-master-slate/30 uppercase tracking-[0.4em] font-heading mb-4 text-center">Formas de Pagamento</p>
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              <div className="rounded-xl p-4 bg-white/5 border border-white/[0.06]">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-3.5 h-3.5 text-master-accent/70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                  </svg>
+                  <span className="text-[10px] font-black text-master-light/70 font-heading uppercase tracking-widest">Cartão de Crédito</span>
+                </div>
+                <p className="text-[11px] text-master-light/35 font-normal leading-relaxed">Parcele em até 12x. Todas as principais bandeiras aceitas.</p>
+              </div>
+              <div className="rounded-xl p-4 bg-white/5 border border-white/[0.06]">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-3.5 h-3.5 text-master-accent/70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                  <span className="text-[10px] font-black text-master-light/70 font-heading uppercase tracking-widest">Pix</span>
+                </div>
+                <p className="text-[11px] text-master-light/35 font-normal leading-relaxed">Pagamento à vista. Acesso liberado na hora.</p>
+              </div>
+            </div>
+            <p className="text-center text-[10px] text-master-light/25 font-normal">
+              Acesso liberado imediatamente após a confirmação do pagamento.
+            </p>
+          </div>
         </div>
 
-        <div className="flex items-center justify-center gap-6 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="flex items-center justify-center gap-4 mt-2 opacity-50 hover:opacity-80 transition-opacity duration-500">
           <img src="https://img.icons8.com/color/48/ffffff/visa.png" className="h-5" alt="Visa" />
           <img src="https://img.icons8.com/color/48/ffffff/mastercard.png" className="h-5" alt="Mastercard" />
           <img src="https://img.icons8.com/color/48/ffffff/pix.png" className="h-5" alt="Pix" />

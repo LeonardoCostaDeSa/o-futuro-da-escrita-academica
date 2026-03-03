@@ -4,11 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 const HEADLINE_LINE1 = 'Escrita Acadêmica';
 const HEADLINE_LINE2 = 'com Inteligência Artificial';
 
-const socialProof = [
-  { value: '300+', label: 'pesquisadores formados' },
-  { value: 'TCC · Mestrado · Doutorado', label: '' },
-  { value: '3 anos', label: 'aplicando IA na academia' },
-];
 
 const Hero: React.FC = () => {
   const [wordsVisible, setWordsVisible] = useState(false);
@@ -99,15 +94,25 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Social Proof Bar — abaixo do vídeo */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-16 py-5 px-8 rounded-full border border-master-light/70 bg-master-offwhite/60">
-            {socialProof.map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                {i > 0 && <span className="hidden sm:block w-px h-4 bg-master-light/80"></span>}
-                <span className="text-sm font-black text-master-deep font-heading">{item.value}</span>
-                {item.label && <span className="text-xs text-master-slate/50 font-normal">{item.label}</span>}
+          {/* Social Proof — Bloco de Autoridade */}
+          <div className="w-full max-w-2xl mx-auto mb-16">
+            <p className="text-[9px] text-master-slate/30 uppercase tracking-[0.5em] font-heading font-black text-center mb-4">
+              Método com resultados comprovados
+            </p>
+            <div className="grid grid-cols-3 divide-x divide-master-light/70 bg-master-offwhite/70 border border-master-light/70 rounded-2xl overflow-hidden shadow-sm">
+              <div className="py-6 px-3 md:px-5 text-center">
+                <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">300+</p>
+                <p className="text-[10px] text-master-slate/55 font-normal leading-snug">pesquisadores<br/>formados</p>
               </div>
-            ))}
+              <div className="py-6 px-3 md:px-5 text-center flex flex-col items-center justify-center">
+                <p className="text-xs font-black text-master-primary font-heading tracking-[0.08em] uppercase leading-tight mb-2">TCC · Mestrado<br/>Doutorado</p>
+                <p className="text-[10px] text-master-slate/55 font-normal leading-snug">todos os níveis acadêmicos</p>
+              </div>
+              <div className="py-6 px-3 md:px-5 text-center">
+                <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">3 anos</p>
+                <p className="text-[10px] text-master-slate/55 font-normal leading-snug">aplicando IA<br/>na academia</p>
+              </div>
+            </div>
           </div>
 
           {/* Post-video hook */}

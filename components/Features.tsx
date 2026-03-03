@@ -3,15 +3,15 @@ import React from 'react';
 import { useReveal } from '../hooks/useReveal';
 
 const learningOutcomes = [
-  "Escrever TCC com apoio de Inteligência Artificial",
-  "Escrever projetos de pesquisa com clareza e estrutura",
-  "Escrever artigos científicos de forma sustentável",
-  "Analisar artigos acadêmicos de forma crítica",
-  "Organizar arquivos e fontes da pesquisa",
-  "Construir tabelas e estruturas de análise",
+  "Escrever TCC e dissertações com apoio de Inteligência Artificial",
+  "Criar projetos de pesquisa com estrutura clara e IA",
+  "Escrever artigos científicos com linguagem acadêmica rigorosa",
+  "Analisar artigos e fontes bibliográficas com apoio de IA",
+  "Organizar arquivos e fontes da pesquisa com eficiência",
+  "Construir tabelas e estruturas de análise de dados",
   "Organizar referências bibliográficas com precisão",
-  "Estruturar argumentos acadêmicos sólidos",
-  "Relacionar autores, conceitos e teorias",
+  "Estruturar e defender argumentos acadêmicos com IA",
+  "Relacionar autores, conceitos e teorias de forma coerente",
 ];
 
 const Features: React.FC = () => {

@@ -31,6 +31,10 @@ const faqs = [
     q: "R$347 é muito para o meu momento atual.",
     a: "Entendo a preocupação — e ela merece uma resposta honesta. Uma hora com um orientador particular custa, em média, mais do que o valor total do curso. Aqui você tem um sistema aplicável agora, nas próximas sessões de escrita, e que continua válido do TCC ao doutorado. Além disso, existe a garantia de 7 dias: se você entrar, acessar o conteúdo e sentir que não vale, devolvemos tudo. O risco financeiro é zero.",
   },
+  {
+    q: "Quais são as formas de pagamento disponíveis?",
+    a: "O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até 12x — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$347 à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.",
+  },
 ];
 
 const FAQ: React.FC = () => {
