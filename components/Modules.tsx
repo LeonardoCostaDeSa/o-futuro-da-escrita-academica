@@ -72,6 +72,95 @@ const Modules: React.FC = () => {
           ))}
         </div>
 
+        {/* ── Bônus ─────────────────────────────────────────────────────── */}
+        <div className="mt-28">
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-5 py-2 mb-6">
+              <svg className="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span className="text-amber-700 font-black tracking-[0.3em] uppercase text-[10px] font-heading">Bônus Incluídos</span>
+            </div>
+            <h3 className="text-3xl font-black text-master-deep font-heading uppercase tracking-tighter leading-tight">
+              Além do conteúdo principal,<br/>você também recebe:
+            </h3>
+            <p className="mt-4 text-master-slate/50 font-normal text-base">
+              Materiais exclusivos para acelerar sua escrita acadêmica.
+            </p>
+          </div>
+
+          {/* Cards de bônus */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Bônus 01 */}
+            <div className="relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Bônus 01
+              </span>
+              <div className="w-10 h-10 flex items-center justify-center bg-master-primary/10 rounded-xl mb-4">
+                <svg className="w-5 h-5 text-master-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              </div>
+              <h4 className="font-black text-master-deep font-heading text-sm uppercase tracking-tight mb-3 leading-tight">
+                Checklist de Criação de Objetivo Acadêmico
+              </h4>
+              <p className="text-master-slate/60 text-sm leading-relaxed font-normal">
+                Material passo a passo para definir objetivo geral, construir objetivos específicos e alinhar objetivo, problema e hipótese.
+              </p>
+            </div>
+
+            {/* Bônus 02 */}
+            <div className="relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Bônus 02
+              </span>
+              <div className="w-10 h-10 flex items-center justify-center bg-master-primary/10 rounded-xl mb-4">
+                <svg className="w-5 h-5 text-master-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h4 className="font-black text-master-deep font-heading text-sm uppercase tracking-tight mb-3 leading-tight">
+                E-book: Hipóteses na Pesquisa Científica
+              </h4>
+              <p className="text-master-slate/60 text-sm leading-relaxed font-normal">
+                Material completo de <strong className="text-master-deep font-semibold">60 páginas</strong> cobrindo tipos de hipóteses, como formulá-las e conectá-las com seus objetivos de pesquisa — com exemplos práticos.
+              </p>
+            </div>
+
+            {/* Bônus 03 */}
+            <div className="relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Bônus 03
+              </span>
+              <div className="w-10 h-10 flex items-center justify-center bg-master-primary/10 rounded-xl mb-4">
+                <svg className="w-5 h-5 text-master-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <h4 className="font-black text-master-deep font-heading text-sm uppercase tracking-tight mb-3 leading-tight">
+                Materiais Complementares
+              </h4>
+              <p className="text-master-slate/60 text-sm leading-relaxed font-normal">
+                Artigos de referência, modelos de estrutura acadêmica, exemplos de escrita científica e materiais de apoio para organização da pesquisa.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* ────────────────────────────────────────────────────────────── */}
+
         <div className="mt-32 bg-master-deep rounded-[3rem] p-16 md:p-24 text-center text-white shadow-[0_50px_100px_-20px_rgba(4,24,43,0.4)] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
           <div className="relative z-10 max-w-3xl mx-auto">

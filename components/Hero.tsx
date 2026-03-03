@@ -1,8 +1,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-const HEADLINE_LINE1 = 'A solidão acadêmica';
-const HEADLINE_LINE2 = 'não é fraqueza sua.';
+const HEADLINE_LINE1 = 'Escrita Acadêmica';
+const HEADLINE_LINE2 = 'com Inteligência Artificial';
 
 const socialProof = [
   { value: '300+', label: 'pesquisadores formados' },
@@ -55,31 +55,31 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
 
-          {/* H1 com word-reveal */}
-          <h1 className="text-5xl tracking-tight font-black text-master-deep sm:text-7xl lg:text-8xl leading-[1.05] font-heading mb-6" aria-label={`${HEADLINE_LINE1} ${HEADLINE_LINE2}`}>
+          {/* Eyebrow label */}
+          <div className="inline-flex items-center gap-2 mb-8">
+            <span className="h-px w-6 bg-master-accent/60"></span>
+            <span className="text-[10px] font-black text-master-primary uppercase tracking-[0.45em] font-heading">Curso Completo com Método</span>
+            <span className="h-px w-6 bg-master-accent/60"></span>
+          </div>
+
+          {/* H1 — nome do curso com word-reveal */}
+          <h1
+            className="text-5xl tracking-tight font-black text-master-deep sm:text-7xl lg:text-8xl leading-[1.05] font-heading mb-6"
+            aria-label={`${HEADLINE_LINE1} ${HEADLINE_LINE2}`}
+          >
             <span className="block">{renderWords(HEADLINE_LINE1, 0)}</span>
             <span className="block text-master-primary italic font-light lowercase font-sans mt-2">
               {renderWords(HEADLINE_LINE2, HEADLINE_LINE1.split(' ').length * 70 + 80)}
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-master-slate/60 leading-relaxed font-normal mb-10 max-w-3xl">
+          {/* Subtítulo */}
+          <p className="text-xl md:text-2xl text-master-slate/60 leading-relaxed font-normal mb-14 max-w-3xl">
             Aprenda um método acadêmico sólido com Inteligência Artificial — preservando rigor, autoria e segurança diante de qualquer banca.
           </p>
 
-          {/* Social Proof Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-14">
-            {socialProof.map((item, i) => (
-              <div key={i} className="flex items-center gap-2">
-                {i > 0 && <span className="hidden sm:block w-px h-4 bg-master-light/80"></span>}
-                <span className="text-sm font-black text-master-deep font-heading">{item.value}</span>
-                {item.label && <span className="text-xs text-master-slate/50 font-normal">{item.label}</span>}
-              </div>
-            ))}
-          </div>
-
-          {/* Video Placeholder */}
-          <div className="w-full max-w-4xl mx-auto mb-20 px-4">
+          {/* Vídeo */}
+          <div className="w-full max-w-4xl mx-auto mb-10 px-4">
             <div className="relative aspect-video bg-master-deep rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light group cursor-pointer transition-transform duration-500 hover:scale-[1.01]">
               <div className="absolute inset-0 bg-gradient-to-tr from-master-deep via-master-slate/90 to-master-primary/20"></div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -97,6 +97,17 @@ const Hero: React.FC = () => {
                 <span className="text-[10px] text-white/30 font-normal">▶ Assista antes de decidir</span>
               </div>
             </div>
+          </div>
+
+          {/* Social Proof Bar — abaixo do vídeo */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-16 py-5 px-8 rounded-full border border-master-light/70 bg-master-offwhite/60">
+            {socialProof.map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                {i > 0 && <span className="hidden sm:block w-px h-4 bg-master-light/80"></span>}
+                <span className="text-sm font-black text-master-deep font-heading">{item.value}</span>
+                {item.label && <span className="text-xs text-master-slate/50 font-normal">{item.label}</span>}
+              </div>
+            ))}
           </div>
 
           {/* Post-video hook */}
