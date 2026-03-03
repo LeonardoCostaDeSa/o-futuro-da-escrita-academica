@@ -1,0 +1,169 @@
+
+import React, { useState, useEffect } from 'react';
+import { COURSE_MODULES } from '../constants';
+import { Module } from '../types';
+
+const Modules: React.FC = () => {
+  const [selectedModule, setSelectedModule] = useState<Module | null>(null);
+
+  useEffect(() => {
+    if (selectedModule) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedModule]);
+
+  return (
+    <section id="modulos" className="py-32 bg-[#fafbfc] scroll-mt-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <div className="inline-block px-6 py-1.5 bg-master-light border border-master-accent/10 rounded-full text-master-primary text-[9px] font-black uppercase tracking-[0.4em] mb-8">
+            Ementa Estratégica
+          </div>
+          <h2 className="text-4xl font-black text-master-deep sm:text-6xl uppercase tracking-tighter font-heading leading-tight">Arquitetura do <br/><span className="text-master-primary">Conhecimento</span></h2>
+          <p className="mt-10 text-lg text-master-slate/60 font-normal max-w-2xl mx-auto leading-relaxed italic">
+            "Um programa desenhado para quem busca o máximo desempenho na escrita científica, sem comprometer o rigor ético exigido pelas grandes instituições."
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
+          {COURSE_MODULES.map((module) => (
+            <div 
+              key={module.id} 
+              className="group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full"
+              onClick={() => setSelectedModule(module)}
+            >
+              <div className="p-10 h-full flex flex-col justify-between">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex gap-6">
+                    <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/20 group-hover:text-master-accent transition-colors">
+                      {String(module.id).padStart(2, '0')}
+                    </span>
+                    <div className="flex flex-col">
+                      <h3 className="text-lg font-black leading-snug font-heading text-master-deep group-hover:text-master-primary transition-colors mb-3 uppercase tracking-tight">
+                        {module.title}
+                      </h3>
+                      <p className="text-xs text-master-slate/60 leading-relaxed font-normal pr-4 line-clamp-3">
+                        {module.description}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-1 p-2 rounded-full border border-master-light text-master-accent group-hover:bg-master-accent group-hover:text-white group-hover:border-transparent transition-all duration-300">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="mt-8 pt-6 border-t border-master-light/50 flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-master-slate/40 uppercase tracking-widest group-hover:text-master-primary transition-colors">
+                    {module.lessons.length} Aulas
+                  </span>
+                  <span className="text-[10px] font-bold text-master-primary opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
+                    Ver Detalhes
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-32 bg-master-deep rounded-[3rem] p-16 md:p-24 text-center text-white shadow-[0_50px_100px_-20px_rgba(4,24,43,0.4)] relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h3 className="text-3xl md:text-5xl font-black mb-10 uppercase tracking-tighter font-heading leading-[1.1]">
+              Domine a tecnologia <br/><span className="text-master-accent">com maestria acadêmica</span>
+            </h3>
+            <p className="text-master-light/50 mb-12 text-lg font-normal leading-relaxed italic">
+              "Para quem entende que a Inteligência Artificial não substitui o pesquisador, mas amplifica sua capacidade de mudar o mundo."
+            </p>
+            <a 
+              href="#preco" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block bg-master-primary text-white px-16 py-6 rounded-full font-black text-xs hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
+            >
+              Iniciar Trajetória
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal Overlay */}
+      {selectedModule && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          <div 
+            className="absolute inset-0 bg-master-deep/80 backdrop-blur-sm transition-opacity" 
+            onClick={() => setSelectedModule(null)}
+          ></div>
+          
+          <div className="relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+            {/* Modal Header */}
+            <div className="p-8 sm:p-10 border-b border-master-light bg-master-offwhite/30 flex items-start justify-between gap-6 shrink-0">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-master-primary/10 text-master-primary text-[9px] font-black uppercase tracking-widest rounded-full border border-master-primary/20">
+                    Módulo {String(selectedModule.id).padStart(2, '0')}
+                  </span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black text-master-deep uppercase tracking-tight font-heading leading-tight">
+                  {selectedModule.title}
+                </h3>
+              </div>
+              <button 
+                onClick={() => setSelectedModule(null)}
+                className="p-2 rounded-full bg-white border border-master-light text-master-slate/40 hover:text-master-deep hover:border-master-deep transition-all"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-8 sm:p-10 overflow-y-auto custom-scrollbar">
+              <p className="text-master-slate/80 text-lg leading-relaxed mb-10 font-normal">
+                {selectedModule.description}
+              </p>
+              
+              <div className="space-y-3">
+                <h4 className="text-xs font-black text-master-deep uppercase tracking-widest mb-6 border-b border-master-light pb-2">
+                  Conteúdo Programático
+                </h4>
+                {selectedModule.lessons.map((lesson, idx) => (
+                  <div 
+                    key={idx} 
+                    className="flex items-start p-4 rounded-xl bg-master-offwhite/50 border border-master-light hover:border-master-accent/30 hover:bg-white transition-all group"
+                  >
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-master-accent/40 group-hover:bg-master-accent mr-4 shrink-0 transition-colors"></div>
+                    <span className="text-sm font-medium text-master-deep/80 group-hover:text-master-deep transition-colors">
+                      {lesson}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-6 sm:p-8 border-t border-master-light bg-master-offwhite/30 shrink-0 flex justify-end">
+              <button 
+                onClick={() => setSelectedModule(null)}
+                className="px-8 py-3 bg-master-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-master-primary transition-colors"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default Modules;

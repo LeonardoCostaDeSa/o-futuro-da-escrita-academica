@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Futuro da Escrita Acadêmica - Revista Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              master: {
+                deep: '#04182b',
+                slate: '#132741',
+                offwhite: '#f8f8f8',
+                light: '#f2f3f5',
+                accent: '#2b9cd4',
+                primary: '#0066a6',
+              }
+            },
+            fontFamily: {
+              sans: ['Questrial', 'sans-serif'],
+              heading: ['Montserrat', 'sans-serif'],
+            },
+            animation: {
+              'valuable-glow': 'valuable-glow 3s ease-in-out infinite',
+            },
+            keyframes: {
+              'valuable-glow': {
+                '0%, 100%': { 
+                  'box-shadow': '0 0 10px rgba(43, 156, 212, 0.1)',
+                  'border-color': 'rgba(43, 156, 212, 0.2)' 
+                },
+                '50%': { 
+                  'box-shadow': '0 0 25px rgba(43, 156, 212, 0.4)',
+                  'border-color': 'rgba(43, 156, 212, 0.6)' 
+                },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Questrial&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Questrial', sans-serif;
+        scroll-behavior: smooth;
+        background-color: #f8f8f8;
+      }
+      h1, h2, h3, h4, .font-heading {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .gradient-master {
+        background: linear-gradient(135deg, #0066a6 0%, #2b9cd4 100%);
+      }
+      .gradient-text-master {
+        background: linear-gradient(90deg, #0066a6, #2b9cd4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Custom animation for the valuable resource effect */
+      @keyframes valuable-glow {
+        0%, 100% { 
+          box-shadow: 0 0 8px rgba(43, 156, 212, 0.15);
+          border-color: rgba(43, 156, 212, 0.2);
+          transform: scale(1);
+        }
+        50% { 
+          box-shadow: 0 0 20px rgba(43, 156, 212, 0.45);
+          border-color: rgba(43, 156, 212, 0.6);
+          transform: scale(1.02);
+        }
+      }
+      .animate-valuable-glow {
+        animation: valuable-glow 3s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-master-deep">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
