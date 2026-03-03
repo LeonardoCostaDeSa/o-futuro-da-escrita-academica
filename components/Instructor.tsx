@@ -1,6 +1,21 @@
 
 import React from 'react';
 
+const stats = [
+  "Mais de 3 anos aplicando IA exclusivamente para fins acadêmicos",
+  "Mais de 300 alunos acompanhados no Brasil e no exterior",
+  "Atuação direta em TCCs, mestrados e doutorados",
+  "Experiência real com insegurança metodológica, troca de orientador e prazos apertados",
+];
+
+const method = [
+  "Clareza metodológica",
+  "Engenharia de prompts com critério",
+  "Rastreabilidade de fontes",
+  "Auditoria humana",
+  "Segurança ética diante de qualquer banca",
+];
+
 const Instructor: React.FC = () => {
   return (
     <section id="instrutor" className="py-32 bg-white scroll-mt-24">
@@ -8,43 +23,74 @@ const Instructor: React.FC = () => {
         <div className="lg:grid lg:grid-cols-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 mb-16 lg:mb-0">
             <div className="relative">
-              {/* Moldura elegante com estética de galeria */}
               <div className="absolute -inset-6 border border-master-light rounded-[2.5rem] -rotate-2 pointer-events-none"></div>
               <div className="relative overflow-hidden rounded-[2rem] shadow-2xl border-4 border-white">
-                <img 
-                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000" 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop" 
-                  alt="Dra. Gabriela Verruck de Moraes"
+                <img
+                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
+                  alt="Dra. Gabriela"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-master-deep/80 to-transparent p-10">
-                  <p className="text-white font-black text-xl font-heading tracking-tighter uppercase leading-none">Dra. Gabriela Verruck</p>
-                  <p className="text-master-accent text-[10px] font-bold uppercase tracking-[0.3em] mt-2">Fundadora & PhD USP</p>
+                  <p className="text-white font-black text-xl font-heading tracking-tighter uppercase leading-none">Dra. Gabriela</p>
+                  <p className="text-master-accent text-[10px] font-bold uppercase tracking-[0.3em] mt-2">Doutora em Ciências · USP</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="h-px w-8 bg-master-accent"></span>
-              <span className="text-master-primary font-black tracking-[0.4em] uppercase text-[10px] font-heading">Nossa Liderança</span>
+              <span className="text-master-primary font-black tracking-[0.4em] uppercase text-[10px] font-heading">Quem conduz você nesse processo</span>
             </div>
-            
-            <h2 className="text-4xl lg:text-5xl font-black text-master-deep mb-8 font-heading uppercase leading-tight tracking-tighter">
-              Excelência Forjada na <br/>
-              <span className="text-master-primary italic font-light lowercase font-sans">Universidade</span> de São Paulo
-            </h2>
-            
-            <div className="space-y-6 text-lg text-master-slate/80 leading-relaxed font-normal border-l-3 border-master-light pl-8">
-              <p>
-                Doutora em Ciências pela <strong>USP</strong>, Gabriela Verruck de Moraes iniciou sua jornada em 2016 com uma visão clara: elevar o rigor da produção científica brasileira através de suporte especializado.
+
+            <p className="text-lg text-master-slate/80 leading-relaxed font-normal mb-6">
+              Eu sou Gabriela, Doutora em Ciências pela <strong>Universidade de São Paulo (USP)</strong>, e trabalho com escrita acadêmica na prática — com alunos reais, em prazos reais, diante de bancas reais.
+            </p>
+
+            <p className="text-sm text-master-slate/60 leading-relaxed font-normal mb-10">
+              Minha trajetória não foi construída apenas em teoria. Foi construída enfrentando os mesmos desafios que você enfrenta hoje — falta de método claro, insegurança na escrita e dúvidas sobre como usar Inteligência Artificial sem comprometer rigor e autoria.
+            </p>
+
+            <ul className="space-y-3 mb-10">
+              {stats.map((s, i) => (
+                <li key={i} className="flex items-start gap-3 text-master-slate/70 text-sm">
+                  <div className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-master-accent shadow-[0_0_8px_rgba(43,156,212,0.8)]"></div>
+                  {s}
+                </li>
+              ))}
+            </ul>
+
+            <div className="bg-master-offwhite rounded-2xl p-8 mb-8 border border-master-light/50">
+              <p className="text-master-slate/50 text-xs mb-3 uppercase tracking-widest font-heading font-black">Eu identifiquei um padrão claro:</p>
+              <p className="font-black text-master-deep text-2xl font-heading leading-tight">
+                O problema raramente é falta de capacidade.<br/>
+                <span className="text-master-primary">É falta de estrutura.</span>
               </p>
-              <p>
-                O que nasceu como um projeto pessoal na maior universidade da América Latina tornou-se a <strong>Revisa Master</strong>, a primeira EdTech do país a escalar mentorias acadêmicas de alto nível com tecnologia de ponta.
-              </p>
-              <p className="font-bold text-master-deep italic">
-                "Nossa missão é redefinir a relação entre o pesquisador e sua obra, transformando desafios complexos em conquistas de impacto global."
-              </p>
+            </div>
+
+            <p className="text-sm text-master-slate/50 mb-4">Foi por isso que desenvolvi um método que combina:</p>
+            <ul className="space-y-2 mb-10">
+              {method.map((m, i) => (
+                <li key={i} className="flex items-start gap-3 text-master-slate/80 text-sm font-medium">
+                  <div className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-master-primary"></div>
+                  {m}
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-master-slate/60 font-normal italic mb-10 text-sm">
+              Meu compromisso é simples: te ajudar a construir um trabalho que você consiga sustentar.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-start gap-3">
+              <a
+                href="#preco"
+                className="inline-flex items-center justify-center px-12 py-5 text-xs font-black rounded-full text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95"
+              >
+                Quero aprender com a Gabriela
+              </a>
+              <span className="text-xs text-master-slate/40 font-normal self-center">Método aplicado e validado na prática.</span>
             </div>
           </div>
         </div>
