@@ -5,8 +5,8 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Modules from './components/Modules';
 import Instructor from './components/Instructor';
-import Testimonials from './components/Testimonials';
 import Audience from './components/Audience';
+import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -21,8 +21,8 @@ const App: React.FC = () => {
         <Features />
         <Modules />
         <Instructor />
-        <Testimonials />
         <Audience />
+        <Testimonials />
         <Pricing />
         <FAQ />
         <FinalCTA />
