@@ -161,7 +161,7 @@ const Modules: React.FC = () => {
         </div>
         {/* ────────────────────────────────────────────────────────────── */}
 
-        <div className="mt-32 bg-master-deep rounded-[3rem] p-16 md:p-24 text-center text-white shadow-[0_50px_100px_-20px_rgba(4,24,43,0.4)] relative overflow-hidden">
+        <div className="mt-32 bg-master-deep rounded-[2rem] md:rounded-[3rem] p-8 sm:p-12 md:p-24 text-center text-white shadow-[0_50px_100px_-20px_rgba(4,24,43,0.4)] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
           <div className="relative z-10 max-w-3xl mx-auto">
             <h3 className="text-3xl md:text-5xl font-black mb-10 uppercase tracking-tighter font-heading leading-[1.1]">
@@ -176,7 +176,7 @@ const Modules: React.FC = () => {
                 e.preventDefault();
                 document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="btn-shine inline-block bg-master-primary text-white px-16 py-6 rounded-full font-black text-xs hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
+              className="btn-shine inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-16 py-5 rounded-full font-black text-xs bg-master-primary text-white hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
             >
               Iniciar Trajetória
             </a>
