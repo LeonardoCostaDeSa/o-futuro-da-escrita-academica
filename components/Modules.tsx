@@ -1,10 +1,12 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { COURSE_MODULES } from '../constants';
 import { Module } from '../types';
 
 const Modules: React.FC = () => {
   const [selectedModule, setSelectedModule] = useState<Module | null>(null);
+  const [modalOriginStyle, setModalOriginStyle] = useState<React.CSSProperties>({});
+  const [flippingId, setFlippingId] = useState<number | null>(null);
 
   useEffect(() => {
     if (selectedModule) {
@@ -16,6 +18,29 @@ const Modules: React.FC = () => {
       document.body.style.overflow = 'unset';
     };
   }, [selectedModule]);
+
+  const openModule = useCallback((mod: Module, e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    // Modal max-w-3xl = 768px, minus container padding (16px each side on mobile)
+    const modalW = Math.min(window.innerWidth - 32, 768);
+    const fromX = rect.left + rect.width / 2 - window.innerWidth / 2;
+    const fromY = rect.top + rect.height / 2 - window.innerHeight / 2;
+    const fromScale = Math.min(rect.width / modalW, 0.94);
+
+    setModalOriginStyle({
+      '--from-x': `${fromX}px`,
+      '--from-y': `${fromY}px`,
+      '--from-scale': String(fromScale),
+    } as React.CSSProperties);
+
+    // Card gira para a borda enquanto o modal abre
+    setFlippingId(mod.id);
+    setTimeout(() => setFlippingId(null), 320);
+
+    setSelectedModule(mod);
+  }, []);
 
   return (
     <section id="modulos" className="py-32 bg-[#fafbfc] scroll-mt-24 relative">
@@ -29,13 +54,13 @@ const Modules: React.FC = () => {
             "Um programa desenhado para quem busca o máximo desempenho na escrita científica, sem comprometer o rigor ético exigido pelas grandes instituições."
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
           {COURSE_MODULES.map((module) => (
-            <div 
-              key={module.id} 
-              className="card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full"
-              onClick={() => setSelectedModule(module)}
+            <div
+              key={module.id}
+              className={`card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full ${flippingId === module.id ? 'card-flip-out' : ''}`}
+              onClick={(e) => openModule(module, e)}
             >
               <div className="p-10 h-full flex flex-col justify-between">
                 <div className="flex items-start justify-between gap-6">
@@ -52,7 +77,7 @@ const Modules: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="mt-1 p-2 rounded-full border border-master-light text-master-accent group-hover:bg-master-accent group-hover:text-white group-hover:border-transparent transition-all duration-300">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -170,8 +195,8 @@ const Modules: React.FC = () => {
             <p className="text-master-light/50 mb-12 text-lg font-normal leading-relaxed italic">
               "Para quem entende que a Inteligência Artificial não substitui o pesquisador, mas amplifica sua capacidade de mudar o mundo."
             </p>
-            <a 
-              href="#preco" 
+            <a
+              href="#preco"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });
@@ -186,13 +211,16 @@ const Modules: React.FC = () => {
 
       {/* Modal Overlay */}
       {selectedModule && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-          <div 
-            className="absolute inset-0 bg-master-deep/80 backdrop-blur-sm transition-opacity" 
+        <div className="modal-perspective fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          <div
+            className="absolute inset-0 bg-master-deep/80 backdrop-blur-sm"
             onClick={() => setSelectedModule(null)}
           ></div>
-          
-          <div className="modal-spring-in relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+
+          <div
+            className="modal-flip-expand relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+            style={modalOriginStyle}
+          >
             {/* Modal Header */}
             <div className="p-8 sm:p-10 border-b border-master-light bg-master-offwhite/30 flex items-start justify-between gap-6 shrink-0">
               <div>
@@ -205,7 +233,7 @@ const Modules: React.FC = () => {
                   {selectedModule.title}
                 </h3>
               </div>
-              <button 
+              <button
                 onClick={() => setSelectedModule(null)}
                 className="p-2 rounded-full bg-white border border-master-light text-master-slate/40 hover:text-master-deep hover:border-master-deep transition-all"
               >
@@ -220,14 +248,14 @@ const Modules: React.FC = () => {
               <p className="text-master-slate/80 text-lg leading-relaxed mb-10 font-normal">
                 {selectedModule.description}
               </p>
-              
+
               <div className="space-y-3">
                 <h4 className="text-xs font-black text-master-deep uppercase tracking-widest mb-6 border-b border-master-light pb-2">
                   Conteúdo Programático
                 </h4>
                 {selectedModule.lessons.map((lesson, idx) => (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className="flex items-start p-4 rounded-xl bg-master-offwhite/50 border border-master-light hover:border-master-accent/30 hover:bg-white transition-all group"
                   >
                     <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-master-accent/40 group-hover:bg-master-accent mr-4 shrink-0 transition-colors"></div>
@@ -241,7 +269,7 @@ const Modules: React.FC = () => {
 
             {/* Modal Footer */}
             <div className="p-6 sm:p-8 border-t border-master-light bg-master-offwhite/30 shrink-0 flex justify-end">
-              <button 
+              <button
                 onClick={() => setSelectedModule(null)}
                 className="px-8 py-3 bg-master-deep text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-master-primary transition-colors"
               >
