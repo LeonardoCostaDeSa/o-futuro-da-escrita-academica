@@ -240,13 +240,27 @@ body {
 }
 
 /* ============================================
-   BUTTON SHINE SWEEP
+   BUTTON SHINE SWEEP + MOONLIGHT
    ============================================ */
 
 .btn-shine {
   position: relative;
   overflow: hidden;
 }
+
+/* Moonlight ambient — radial bloom at top, always visible */
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 45% at 50% -15%, rgba(255,255,255,0.22) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,0.10) 0%, transparent 45%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Sweep shine on hover */
 .btn-shine::after {
   content: '';
   position: absolute;
@@ -254,7 +268,7 @@ body {
   left: -100%;
   width: 55%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
   transform: skewX(-18deg);
   pointer-events: none;
   transition: left 0s;

@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
             <a
               href="#preco"
               onClick={(e) => handleScroll(e, 'preco')}
-              className="px-10 py-4 bg-master-deep text-white text-[10px] font-black rounded-full hover:bg-master-primary transition-all shadow-xl shadow-master-deep/10 uppercase tracking-[0.25em] font-heading hover:scale-105 active:scale-95"
+              className="btn-shine px-10 py-4 bg-master-deep text-white text-[10px] font-black rounded-2xl hover:bg-master-primary transition-all shadow-xl shadow-master-deep/10 uppercase tracking-[0.25em] font-heading hover:scale-105 active:scale-95"
             >
               Matricule-se
             </a>
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
           <a
             href="#preco"
             onClick={(e) => handleScroll(e, 'preco')}
-            className="mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-full hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
+            className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
             Garantir minha vaga
           </a>

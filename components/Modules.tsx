@@ -176,7 +176,7 @@ const Modules: React.FC = () => {
                 e.preventDefault();
                 document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="btn-shine inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-16 py-5 rounded-full font-black text-xs bg-master-primary text-white hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
+              className="btn-shine inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-16 py-5 rounded-2xl font-black text-xs bg-master-primary text-white hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
             >
               Iniciar Trajetória
             </a>
@@ -243,7 +243,7 @@ const Modules: React.FC = () => {
             <div className="p-6 sm:p-8 border-t border-master-light bg-master-offwhite/30 shrink-0 flex justify-end">
               <button 
                 onClick={() => setSelectedModule(null)}
-                className="px-8 py-3 bg-master-deep text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-master-primary transition-colors"
+                className="px-8 py-3 bg-master-deep text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-master-primary transition-colors"
               >
                 Fechar
               </button>

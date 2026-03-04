@@ -67,7 +67,7 @@ const Audience: React.FC = () => {
             </ul>
             <a
               href="#preco"
-              className="inline-flex items-center justify-center w-full px-8 py-4 text-xs font-black rounded-full text-white bg-master-primary hover:bg-master-accent transition-all uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
+              className="btn-shine inline-flex items-center justify-center w-full px-8 py-4 text-xs font-black rounded-2xl text-white bg-master-primary hover:bg-master-accent transition-all uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
               Quero fazer parte desse grupo
             </a>
