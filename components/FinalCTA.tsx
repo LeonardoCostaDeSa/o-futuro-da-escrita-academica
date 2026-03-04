@@ -38,7 +38,7 @@ const FinalCTA: React.FC = () => {
 
           <h2 className="text-4xl sm:text-5xl font-black font-heading uppercase tracking-tighter leading-[1.05] mb-6 text-white">
             Você pode continuar<br/>
-            <span className="text-master-slate/50 font-light italic lowercase font-sans">improvisando.</span>
+            <span className="text-white/55 font-light italic lowercase font-sans">improvisando.</span>
           </h2>
 
           <p className="text-2xl sm:text-3xl font-black font-heading text-white mb-4 leading-tight">
