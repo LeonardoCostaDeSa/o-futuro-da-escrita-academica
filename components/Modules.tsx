@@ -34,7 +34,7 @@ const Modules: React.FC = () => {
           {COURSE_MODULES.map((module) => (
             <div 
               key={module.id} 
-              className="group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full"
+              className="card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full"
               onClick={() => setSelectedModule(module)}
             >
               <div className="p-10 h-full flex flex-col justify-between">
@@ -93,7 +93,7 @@ const Modules: React.FC = () => {
           {/* Cards de bônus */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Bônus 01 */}
-            <div className="relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 hover:shadow-lg transition-all duration-300">
+            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
               <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
               <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -115,7 +115,7 @@ const Modules: React.FC = () => {
             </div>
 
             {/* Bônus 02 */}
-            <div className="relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 hover:shadow-lg transition-all duration-300">
+            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
               <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
               <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -137,7 +137,7 @@ const Modules: React.FC = () => {
             </div>
 
             {/* Bônus 03 */}
-            <div className="relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 hover:shadow-lg transition-all duration-300">
+            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
               <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
               <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -176,7 +176,7 @@ const Modules: React.FC = () => {
                 e.preventDefault();
                 document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-block bg-master-primary text-white px-16 py-6 rounded-full font-black text-xs hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
+              className="btn-shine inline-block bg-master-primary text-white px-16 py-6 rounded-full font-black text-xs hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
             >
               Iniciar Trajetória
             </a>
@@ -192,7 +192,7 @@ const Modules: React.FC = () => {
             onClick={() => setSelectedModule(null)}
           ></div>
           
-          <div className="relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+          <div className="modal-spring-in relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
             {/* Modal Header */}
             <div className="p-8 sm:p-10 border-b border-master-light bg-master-offwhite/30 flex items-start justify-between gap-6 shrink-0">
               <div>

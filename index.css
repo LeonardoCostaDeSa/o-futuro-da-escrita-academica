@@ -100,7 +100,7 @@
   transform: translateY(0);
 }
 
-/* --- Scale Reveal (para card de preço e elementos de destaque) --- */
+/* --- Scale Reveal --- */
 .reveal-scale {
   opacity: 0;
   transform: scale(0.95) translateY(16px);
@@ -118,4 +118,168 @@
 }
 .reveal-line.visible {
   width: 100%;
+}
+
+/* ============================================
+   AURORA BACKGROUND SYSTEM
+   ============================================ */
+
+@keyframes aurora-shift {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  33%  { transform: translate(6%, -5%) scale(1.12); }
+  66%  { transform: translate(-4%, 4%) scale(0.91); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(var(--aurora-blur, 100px));
+  animation: aurora-shift var(--aurora-duration, 14s) ease-in-out infinite var(--aurora-delay, 0s);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ============================================
+   PAIN DIVIDER — IMPACT SYSTEM
+   ============================================ */
+
+/* Scan beam that sweeps across */
+@keyframes scan-beam {
+  0%   { left: -18%; opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { left: 118%; opacity: 0; }
+}
+
+.pain-scan {
+  position: absolute;
+  top: 0;
+  width: 18%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(43,156,212,0.07) 50%, transparent 100%);
+  animation: scan-beam 5.5s ease-in-out infinite;
+  will-change: left;
+  pointer-events: none;
+}
+
+/* Central bloom that breathes */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.04; transform: scale(1); }
+  50%       { opacity: 0.15; transform: scale(1.3); }
+}
+
+.pain-glow-pulse {
+  animation: glow-pulse 5s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+/* Horizontal line that draws itself */
+.pain-line {
+  transform-origin: center;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(.16,1,.3,1) 0.1s, opacity 0.4s ease 0.1s;
+}
+.pain-line.visible {
+  transform: scaleX(1);
+  opacity: 0.2;
+}
+
+/* ============================================
+   CARD FLOAT SYSTEM
+   ============================================ */
+
+.card-float {
+  transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s cubic-bezier(.16,1,.3,1), border-color 0.25s ease;
+}
+.card-float:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px -12px rgba(0, 102, 166, 0.13), 0 0 0 1px rgba(43,156,212,0.2);
+}
+
+.card-float-dark {
+  transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s cubic-bezier(.16,1,.3,1), border-color 0.25s ease;
+}
+.card-float-dark:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(43,156,212,0.28);
+}
+
+/* ============================================
+   CURSOR GLOW CARD
+   ============================================ */
+
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(43,156,212,0.09), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   BUTTON SHINE SWEEP
+   ============================================ */
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+  transition: left 0s;
+}
+.btn-shine:hover::after {
+  left: 145%;
+  transition: left 0.6s ease;
+}
+
+/* ============================================
+   MODAL SPRING ANIMATIONS
+   ============================================ */
+
+@keyframes modal-in {
+  0%   { opacity: 0; transform: scale(0.91) translateY(22px); }
+  60%  { opacity: 1; transform: scale(1.015) translateY(-3px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes modal-out {
+  0%   { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(0.93) translateY(16px); }
+}
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-spring-in {
+  animation: modal-in 0.45s cubic-bezier(.16,1,.3,1) forwards;
+}
+.modal-spring-out {
+  animation: modal-out 0.22s ease forwards;
+}
+.modal-overlay-in {
+  animation: overlay-fade-in 0.3s ease forwards;
 }

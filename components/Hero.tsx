@@ -40,10 +40,20 @@ const Hero: React.FC = () => {
       ref={sectionRef}
       className="relative pt-12 pb-24 bg-white overflow-hidden scroll-mt-24"
     >
-      {/* Background Decorativo */}
+      {/* Background Decorativo — Aurora animada */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-15%] right-[-5%] w-[50%] h-[50%] bg-master-primary/5 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-master-accent/5 blur-[120px] rounded-full"></div>
+        <div
+          className="aurora-blob w-[55%] h-[55%] bg-master-primary/10 top-[-18%] right-[-8%]"
+          style={{ '--aurora-duration': '18s', '--aurora-delay': '0s', '--aurora-blur': '130px' } as React.CSSProperties}
+        />
+        <div
+          className="aurora-blob w-[42%] h-[42%] bottom-[-12%] left-[-8%]"
+          style={{ '--aurora-duration': '22s', '--aurora-delay': '-8s', '--aurora-blur': '110px', backgroundColor: 'rgba(43,156,212,0.05)' } as React.CSSProperties}
+        />
+        <div
+          className="aurora-blob w-[28%] h-[28%] top-[40%] left-[22%]"
+          style={{ '--aurora-duration': '14s', '--aurora-delay': '-4s', '--aurora-blur': '90px', backgroundColor: 'rgba(0,102,166,0.04)' } as React.CSSProperties}
+        />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.15]"></div>
       </div>
 
@@ -128,7 +138,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col items-center gap-3">
               <a
                 href="#preco"
-                className="flex items-center justify-center px-14 py-5 text-sm font-black rounded-full text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
+                className="btn-shine flex items-center justify-center px-14 py-5 text-sm font-black rounded-full text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
               >
                 Quero aprender o método
               </a>

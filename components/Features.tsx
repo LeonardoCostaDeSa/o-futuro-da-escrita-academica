@@ -40,7 +40,7 @@ const Features: React.FC = () => {
           {learningOutcomes.map((item, i) => (
             <li
               key={i}
-              className={`flex items-start gap-4 bg-white rounded-2xl p-6 border border-master-light/50 hover:border-master-accent/30 hover:shadow-sm transition-all reveal reveal-delay-${Math.min(i + 1, 7)} ${isVisible ? 'visible' : ''}`}
+              className={`card-float flex items-start gap-4 bg-white rounded-2xl p-6 border border-master-light/50 hover:border-master-accent/30 reveal reveal-delay-${Math.min(i + 1, 7)} ${isVisible ? 'visible' : ''}`}
             >
               <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-master-accent shadow-[0_0_10px_rgba(43,156,212,0.8)]"></div>
               <span className="text-master-slate/80 font-normal leading-relaxed">{item}</span>
@@ -56,7 +56,7 @@ const Features: React.FC = () => {
           <div className="flex flex-col items-center gap-3">
             <a
               href="#preco"
-              className="inline-flex items-center justify-center px-14 py-5 text-xs font-black rounded-full text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
+              className="btn-shine inline-flex items-center justify-center px-14 py-5 text-xs font-black rounded-full text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
               Quero fazer do jeito certo
             </a>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, RefObject } from 'react';
 
 interface UseRevealOptions {
   threshold?: number;
@@ -7,7 +7,7 @@ interface UseRevealOptions {
 }
 
 interface UseRevealReturn {
-  ref: React.RefObject<HTMLElement | null>;
+  ref: RefObject<HTMLElement | null>;
   isVisible: boolean;
 }
 
