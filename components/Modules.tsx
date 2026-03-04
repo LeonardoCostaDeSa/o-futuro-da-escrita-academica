@@ -6,7 +6,10 @@ import { Module } from '../types';
 const Modules: React.FC = () => {
   const [selectedModule, setSelectedModule] = useState<Module | null>(null);
   const [modalOriginStyle, setModalOriginStyle] = useState<React.CSSProperties>({});
-  const [flippingId, setFlippingId] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+  // Card animation: 'card-flip-out' quando abre, 'card-flip-in' quando fecha
+  const [animatingCardId, setAnimatingCardId] = useState<number | null>(null);
+  const [cardAnimClass, setCardAnimClass] = useState('');
 
   useEffect(() => {
     if (selectedModule) {
@@ -23,7 +26,6 @@ const Modules: React.FC = () => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
 
-    // Modal max-w-3xl = 768px, minus container padding (16px each side on mobile)
     const modalW = Math.min(window.innerWidth - 32, 768);
     const fromX = rect.left + rect.width / 2 - window.innerWidth / 2;
     const fromY = rect.top + rect.height / 2 - window.innerHeight / 2;
@@ -35,12 +37,29 @@ const Modules: React.FC = () => {
       '--from-scale': String(fromScale),
     } as React.CSSProperties);
 
-    // Card gira para a borda enquanto o modal abre
-    setFlippingId(mod.id);
-    setTimeout(() => setFlippingId(null), 320);
+    // Card vira de lado enquanto o modal abre
+    setAnimatingCardId(mod.id);
+    setCardAnimClass('card-flip-out');
+    setTimeout(() => setAnimatingCardId(null), 320);
 
     setSelectedModule(mod);
   }, []);
+
+  const closeModal = useCallback(() => {
+    if (isClosing || !selectedModule) return;
+    const cardId = selectedModule.id;
+    setIsClosing(true);
+
+    // Após a animação de collapse (~500ms): remove o modal e faz o card "aterrissar"
+    setTimeout(() => {
+      setSelectedModule(null);
+      setIsClosing(false);
+      // Card flip-in — aparece chegando do modal de volta ao grid
+      setAnimatingCardId(cardId);
+      setCardAnimClass('card-flip-in');
+      setTimeout(() => setAnimatingCardId(null), 480);
+    }, 480);
+  }, [isClosing, selectedModule]);
 
   return (
     <section id="modulos" className="py-32 bg-[#fafbfc] scroll-mt-24 relative">
@@ -59,7 +78,7 @@ const Modules: React.FC = () => {
           {COURSE_MODULES.map((module) => (
             <div
               key={module.id}
-              className={`card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full ${flippingId === module.id ? 'card-flip-out' : ''}`}
+              className={`card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full ${animatingCardId === module.id ? cardAnimClass : ''}`}
               onClick={(e) => openModule(module, e)}
             >
               <div className="p-10 h-full flex flex-col justify-between">
@@ -99,7 +118,6 @@ const Modules: React.FC = () => {
 
         {/* ── Bônus ─────────────────────────────────────────────────────── */}
         <div className="mt-28">
-          {/* Heading */}
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-5 py-2 mb-6">
               <svg className="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -115,7 +133,6 @@ const Modules: React.FC = () => {
             </p>
           </div>
 
-          {/* Cards de bônus */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Bônus 01 */}
             <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
@@ -212,13 +229,15 @@ const Modules: React.FC = () => {
       {/* Modal Overlay */}
       {selectedModule && (
         <div className="modal-perspective fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          {/* Backdrop — some junto com o modal */}
           <div
-            className="absolute inset-0 bg-master-deep/80 backdrop-blur-sm"
-            onClick={() => setSelectedModule(null)}
+            className={`absolute inset-0 bg-master-deep/80 backdrop-blur-sm ${isClosing ? 'modal-overlay-out' : 'modal-overlay-in'}`}
+            onClick={isClosing ? undefined : closeModal}
           ></div>
 
+          {/* Modal card — expand ou collapse dependendo do estado */}
           <div
-            className="modal-flip-expand relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+            className={`relative bg-white rounded-3xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden ${isClosing ? 'modal-flip-collapse' : 'modal-flip-expand'}`}
             style={modalOriginStyle}
           >
             {/* Modal Header */}
@@ -234,7 +253,7 @@ const Modules: React.FC = () => {
                 </h3>
               </div>
               <button
-                onClick={() => setSelectedModule(null)}
+                onClick={closeModal}
                 className="p-2 rounded-full bg-white border border-master-light text-master-slate/40 hover:text-master-deep hover:border-master-deep transition-all"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -270,7 +289,7 @@ const Modules: React.FC = () => {
             {/* Modal Footer */}
             <div className="p-6 sm:p-8 border-t border-master-light bg-master-offwhite/30 shrink-0 flex justify-end">
               <button
-                onClick={() => setSelectedModule(null)}
+                onClick={closeModal}
                 className="px-8 py-3 bg-master-deep text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-master-primary transition-colors"
               >
                 Fechar
