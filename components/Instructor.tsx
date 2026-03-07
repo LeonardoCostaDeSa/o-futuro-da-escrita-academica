@@ -50,15 +50,15 @@ const Instructor: React.FC = () => {
               <div className="relative overflow-hidden rounded-[2rem] shadow-2xl border-4 border-white">
                 <img
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000"
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
-                  alt="Dra. Gabriela — Doutora em Ciências pela USP, especialista em escrita acadêmica com IA"
+                  src="/imgs/image_Gabriela.png"
+                  alt="Dra. Gabriela Verruck — Doutora em Ciências pela USP, especialista em escrita acadêmica com IA"
                   loading="lazy"
                   width={600}
                   height={600}
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-master-deep/80 to-transparent p-10">
-                  <p className="text-white font-black text-xl font-heading tracking-tighter uppercase leading-none">Dra. Gabriela</p>
-                  <p className="text-master-accent text-[10px] font-bold uppercase tracking-[0.3em] mt-2">Doutora em Ciências · USP</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-master-deep via-master-deep/70 to-transparent p-10">
+                  <p className="text-white font-black text-xl font-heading tracking-tighter uppercase leading-none">Dra. Gabriela Verruck</p>
+                  <p className="text-white/80 text-xs font-bold uppercase tracking-[0.3em] mt-2">Doutora em Ciências · USP</p>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@ const Instructor: React.FC = () => {
             </div>
 
             <p className="text-lg text-master-slate/80 leading-relaxed font-normal mb-6">
-              Eu sou Gabriela, Doutora em Ciências pela <strong>Universidade de São Paulo (USP)</strong>, e trabalho com escrita acadêmica na prática — com alunos reais, em prazos reais, diante de bancas reais.
+              Eu sou Gabriela Verruck, Doutora em Ciências pela <strong>Universidade de São Paulo (USP)</strong>, e trabalho com escrita acadêmica na prática — com alunos reais, em prazos reais, diante de bancas reais.
             </p>
 
             <p className="text-sm text-master-slate/60 leading-relaxed font-normal mb-10">
@@ -111,7 +111,7 @@ const Instructor: React.FC = () => {
                 href="#preco"
                 className="btn-shine inline-flex items-center justify-center px-12 py-5 text-xs font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
               >
-                Quero aprender com a Gabriela
+                Quero aprender com a Dra. Gabriela Verruck
               </a>
               <span className="text-xs text-master-slate/40 font-normal self-center">Método aplicado e validado na prática.</span>
             </div>

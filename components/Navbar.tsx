@@ -31,13 +31,22 @@ const Navbar: React.FC = () => {
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="flex items-center justify-center w-12 h-12 bg-master-deep rounded-xl group-hover:bg-master-primary transition-colors duration-500">
-              <span className="text-white font-black text-xl font-heading tracking-tighter">RM</span>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-master-deep font-black text-lg tracking-tighter font-heading uppercase">Revisa</span>
-              <span className="text-master-primary font-light text-lg tracking-[0.1em] font-heading uppercase -mt-1">Master</span>
-            </div>
+            {/* Mobile */}
+            <img
+              src="/imgs/logo_RM_Transparente.png"
+              alt="Revisa Master"
+              className="md:hidden h-14 w-auto object-contain"
+              width={140}
+              height={56}
+            />
+            {/* Desktop */}
+            <img
+              src="/imgs/RM_Transparente_grande.png"
+              alt="Revisa Master"
+              className="hidden md:block h-20 w-auto object-contain"
+              width={200}
+              height={80}
+            />
           </div>
 
           {/* Links — desktop */}

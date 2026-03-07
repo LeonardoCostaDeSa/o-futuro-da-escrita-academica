@@ -7,14 +7,14 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-5">
-            <div className="mb-10 flex items-center gap-3">
-              <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl border border-white/5">
-                <span className="text-white font-black text-xl font-heading tracking-tighter">RM</span>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-white font-black text-lg tracking-tighter font-heading uppercase">Revisa</span>
-                <span className="text-master-accent font-light text-lg tracking-[0.1em] font-heading uppercase -mt-1">Master</span>
-              </div>
+            <div className="mb-10">
+              <img
+                src="/imgs/logo_RM_Transparente_footer.png"
+                alt="Revisa Master"
+                className="h-16 w-auto object-contain"
+                width={160}
+                height={64}
+              />
             </div>
             <p className="text-master-light/30 text-sm leading-relaxed max-w-sm font-normal">
               A autoridade definitiva em produtividade acadêmica. Nossa missão é elevar o padrão da produção científica brasileira através da inovação ética e tecnológica.

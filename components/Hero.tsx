@@ -1,8 +1,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica.';
-const HEADLINE_LINE2 = 'Escreva como pesquisador. Defenda com mérito.';
+const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
+const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
 
 
 const Hero: React.FC = () => {
@@ -73,15 +73,14 @@ const Hero: React.FC = () => {
             aria-label={`${HEADLINE_LINE1} ${HEADLINE_LINE2}`}
           >
             <span className="block">{renderWords(HEADLINE_LINE1, 0)}</span>
-            <span className="block text-master-primary italic font-light lowercase font-sans mt-2">
+            <span className="block text-master-primary italic font-light lowercase font-sans mt-2 text-4xl sm:text-5xl lg:text-6xl">
               {renderWords(HEADLINE_LINE2, HEADLINE_LINE1.split(' ').length * 70 + 80)}
             </span>
           </h1>
 
           {/* Subtítulo */}
           <p className="text-xl md:text-2xl text-master-slate/60 leading-relaxed font-normal mb-14 max-w-3xl">
-            Um método estruturado para escrever TCC, dissertação ou tese com clareza, velocidade e argumentação que resiste a qualquer banca — sem depender de inspiração, sem medo de plágio e sem travar no processo.
-          </p>
+           </p>
 
           {/* Vídeo */}
           <div className="w-full max-w-4xl mx-auto mb-10 px-4">
