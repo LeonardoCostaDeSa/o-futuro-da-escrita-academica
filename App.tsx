@@ -15,7 +15,7 @@ import PainDivider from './components/PainDivider';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />
       <main className="flex-grow">
         <Hero />

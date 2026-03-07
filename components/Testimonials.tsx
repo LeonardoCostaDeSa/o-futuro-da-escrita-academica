@@ -5,21 +5,24 @@ import { useCursorGlow } from '../hooks/useCursorGlow';
 
 const testimonials = [
   {
-    quote: "Eu estava travada há meses no mestrado. Depois que organizei objetivo e metodologia com o método, o texto finalmente começou a fluir.",
-    role: "Mestrado, Psicologia",
-    initials: "A.S.",
+    quote: "Precisei fazer uma consulta sobre a apresentação para a banca de mestrado. Ainda bem que encontrei essa profissional no meu caminho! É super didática, domina a oratória e entende realmente do assunto. Gratidão!",
+    name: "Luciene Luiza",
+    role: "Mestrado · Local Guide",
+    initials: "L.L.",
     color: "bg-purple-500",
   },
   {
-    quote: "Eu usava IA, mas morria de medo de estar fazendo errado. Hoje eu sei como validar cada etapa.",
-    role: "Doutorado, Engenharia",
-    initials: "R.M.",
+    quote: "A Gabi foi essencial no meu processo de TCC, com orientações e correções que fizeram toda a diferença em cada etapa. Seu apoio foi fundamental para o meu crescimento durante esse período. Ela é super atenciosa, dedicada e uma pessoa incrível. Recomendo muito!",
+    name: "Karen Oliveira Barbosa",
+    role: "TCC",
+    initials: "K.O.",
     color: "bg-blue-500",
   },
   {
-    quote: "O curso não facilita o trabalho. Ele organiza o trabalho. E isso muda tudo.",
-    role: "TCC, Direito",
-    initials: "C.F.",
+    quote: "Contratar o serviço da Gabi foi a melhor coisa que eu fiz para o meu TCC. Me ajudou a passar por essa fase com muito mais tranquilidade e segurança. Ela é uma excelente profissional e entregou um trabalho acadêmico impecável. Eu ganhei nota 10 e ela foi parte integral disso. Recomendo de olhos fechados!",
+    name: "Tarsila Ceruci",
+    role: "TCC · Nota 10",
+    initials: "T.C.",
     color: "bg-amber-500",
   },
 ];
@@ -67,7 +70,10 @@ const Testimonials: React.FC = () => {
                 <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center flex-shrink-0`}>
                   <span className="text-white text-xs font-black font-heading">{t.initials}</span>
                 </div>
-                <p className="text-master-accent text-xs font-black uppercase tracking-[0.2em] font-heading">{t.role}</p>
+                <div>
+                  <p className="text-white text-xs font-black font-heading">{t.name}</p>
+                  <p className="text-master-accent text-[10px] font-black uppercase tracking-[0.2em] font-heading mt-0.5">{t.role}</p>
+                </div>
               </div>
 
               <p className="text-master-light/80 leading-relaxed font-normal italic relative z-10">"{t.quote}"</p>
