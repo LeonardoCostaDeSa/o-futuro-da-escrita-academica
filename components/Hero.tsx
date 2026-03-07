@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           {/* Eyebrow label */}
           <div className="inline-flex items-center gap-2 mb-8">
             <span className="h-px w-6 bg-master-accent/60"></span>
-            <span className="text-[10px] font-black text-master-primary uppercase tracking-[0.45em] font-heading">Método com 300+ Pesquisadores Formados</span>
+            <span className="text-[10px] font-black text-master-primary uppercase tracking-[0.45em] font-heading">Curso de Escrita Acadêmica com IA</span>
             <span className="h-px w-6 bg-master-accent/60"></span>
           </div>
 
