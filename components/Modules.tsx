@@ -4,9 +4,9 @@ import { COURSE_MODULES } from '../constants';
 import { Module } from '../types';
 
 const PHASES = [
-  { label: 'Fase 1 — Fundação', ids: [1, 2, 3, 4], description: 'Antes de escrever, você precisa entender a ferramenta.' },
-  { label: 'Fase 2 — Construção', ids: [5, 6, 7], description: 'Aqui começa o trabalho real. Seção por seção, com método.' },
-  { label: 'Fase 3 — Finalização', ids: [8, 9], description: 'Você estruturou. Hora de finalizar com excelência.' },
+  { label: 'Fase 1 — Fundação', ids: [1, 2, 3, 4], description: 'Antes de escrever, você precisa entender a ferramenta.', accentColor: 'bg-master-primary/60' },
+  { label: 'Fase 2 — Construção', ids: [5, 6, 7], description: 'Aqui começa o trabalho real. Seção por seção, com método.', accentColor: 'bg-master-accent/60' },
+  { label: 'Fase 3 — Finalização', ids: [8, 9], description: 'Você estruturou. Hora de finalizar com excelência.', accentColor: 'bg-master-green/60' },
 ];
 
 const Modules: React.FC = () => {
@@ -99,9 +99,10 @@ const Modules: React.FC = () => {
                   {phaseModules.map((module) => (
                     <div
                       key={module.id}
-                      className={`card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full ${animatingCardId === module.id ? cardAnimClass : ''}`}
+                      className={`card-float group bg-white rounded-xl overflow-hidden shadow-sm border border-master-light/40 hover:border-master-accent/40 cursor-pointer h-full ${animatingCardId === module.id ? cardAnimClass : ''}`}
                       onClick={(e) => openModule(module, e)}
                     >
+                      <div className={`h-1 ${phase.accentColor}`}></div>
                       <div className="p-10 h-full flex flex-col justify-between">
                         <div className="flex items-start justify-between gap-6">
                           <div className="flex gap-6">
@@ -143,11 +144,11 @@ const Modules: React.FC = () => {
         {/* ── Bônus ─────────────────────────────────────────────────────── */}
         <div className="mt-28">
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-5 py-2 mb-6">
-              <svg className="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div className="inline-flex items-center gap-2 bg-master-gold/10 border border-master-gold/30 rounded-full px-5 py-2 mb-6">
+              <svg className="w-3.5 h-3.5 text-master-gold" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
-              <span className="text-amber-700 font-black tracking-[0.3em] uppercase text-[10px] font-heading">Bônus Incluídos</span>
+              <span className="text-master-gold font-black tracking-[0.3em] uppercase text-[10px] font-heading">Bônus Incluídos</span>
             </div>
             <h3 className="text-3xl font-black text-master-deep font-heading uppercase tracking-tighter leading-tight">
               Além do conteúdo principal,<br/>você também recebe:
@@ -159,9 +160,9 @@ const Modules: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Bônus 01 */}
-            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 flex flex-col">
-              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
+            <div className="card-float relative bg-gradient-to-br from-master-gold/5 to-white rounded-2xl p-8 border border-master-gold/20 hover:border-master-gold/40 flex flex-col">
+              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-master-gold/60 to-transparent -translate-y-px rounded-full"></div>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-master-gold uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
@@ -180,14 +181,14 @@ const Modules: React.FC = () => {
               </p>
               <div className="mt-5 pt-4 border-t border-master-light/50 flex items-center justify-between">
                 <span className="text-[9px] text-master-slate/30 uppercase tracking-widest font-heading font-black">Valor incluído</span>
-                <span className="text-xs font-black text-amber-600 font-heading">R$97</span>
+                <span className="text-xs font-black text-master-gold font-heading">R$97</span>
               </div>
             </div>
 
             {/* Bônus 02 */}
-            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 flex flex-col">
-              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
+            <div className="card-float relative bg-gradient-to-br from-master-gold/5 to-white rounded-2xl p-8 border border-master-gold/20 hover:border-master-gold/40 flex flex-col">
+              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-master-gold/60 to-transparent -translate-y-px rounded-full"></div>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-master-gold uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
@@ -206,14 +207,14 @@ const Modules: React.FC = () => {
               </p>
               <div className="mt-5 pt-4 border-t border-master-light/50 flex items-center justify-between">
                 <span className="text-[9px] text-master-slate/30 uppercase tracking-widest font-heading font-black">Valor incluído</span>
-                <span className="text-xs font-black text-amber-600 font-heading">R$97</span>
+                <span className="text-xs font-black text-master-gold font-heading">R$97</span>
               </div>
             </div>
 
             {/* Bônus 03 */}
-            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 flex flex-col">
-              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
+            <div className="card-float relative bg-gradient-to-br from-master-gold/5 to-white rounded-2xl p-8 border border-master-gold/20 hover:border-master-gold/40 flex flex-col">
+              <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-master-gold/60 to-transparent -translate-y-px rounded-full"></div>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-master-gold uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
@@ -232,7 +233,7 @@ const Modules: React.FC = () => {
               </p>
               <div className="mt-5 pt-4 border-t border-master-light/50 flex items-center justify-between">
                 <span className="text-[9px] text-master-slate/30 uppercase tracking-widest font-heading font-black">Valor incluído</span>
-                <span className="text-xs font-black text-amber-600 font-heading">R$97</span>
+                <span className="text-xs font-black text-master-gold font-heading">R$97</span>
               </div>
             </div>
           </div>

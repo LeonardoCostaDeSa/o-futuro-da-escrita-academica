@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
             <p className="text-[9px] text-master-slate/30 uppercase tracking-[0.5em] font-heading font-black text-center mb-4">
               Método com resultados comprovados
             </p>
-            <div className="grid grid-cols-3 divide-x divide-master-light/70 bg-master-offwhite/70 border border-master-light/70 rounded-2xl overflow-hidden shadow-sm">
+            <div className="grid grid-cols-3 divide-x divide-master-light/70 bg-master-offwhite/70 border border-master-light/70 rounded-t-none rounded-b-2xl overflow-hidden shadow-sm">
               <div className="py-6 px-3 md:px-5 text-center">
                 <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">300+</p>
                 <p className="text-[10px] text-master-slate/55 font-normal leading-snug">pesquisadores<br/>formados</p>

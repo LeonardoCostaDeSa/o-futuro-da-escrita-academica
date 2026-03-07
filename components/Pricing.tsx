@@ -44,7 +44,7 @@ const Pricing: React.FC = () => {
             <p className="text-master-light/40 mb-10 font-normal">Acesso completo ao curso por:</p>
 
             {/* Value anchor block */}
-            <div className="border border-white/10 bg-white/5 rounded-2xl p-6 mb-8 text-left">
+            <div className="border border-white/10 bg-white/5 rounded-t-none rounded-b-2xl p-6 mb-8 text-left">
               <p className="text-[9px] font-black text-master-accent uppercase tracking-[0.4em] font-heading mb-4">O que você leva</p>
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center justify-between text-xs">
@@ -67,7 +67,7 @@ const Pricing: React.FC = () => {
               <div className="border-t border-white/10 pt-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-black text-master-light/50 font-heading uppercase tracking-wider">Total em conteúdo</span>
-                  <span className="inline-flex items-center bg-emerald-500/15 border border-emerald-500/30 rounded-full px-2.5 py-0.5 text-[9px] font-black text-emerald-400 uppercase tracking-wider font-heading">-46%</span>
+                  <span className="inline-flex items-center bg-master-green/15 border border-master-green/30 rounded-full px-2.5 py-0.5 text-[9px] font-black text-master-green uppercase tracking-wider font-heading">-46%</span>
                 </div>
                 <div className="text-right">
                   <span className="text-master-light/40 line-through text-sm mr-2">R$638</span>
@@ -77,7 +77,7 @@ const Pricing: React.FC = () => {
             </div>
           </div>
 
-          <div className={`relative bg-gradient-to-b from-[#0a2540] to-master-deep border border-master-primary/30 rounded-[2.5rem] p-12 shadow-[0_40px_100px_-20px_rgba(0,102,166,0.3)] mb-8 reveal reveal-delay-1 overflow-hidden ${isVisible ? 'visible' : ''}`}>
+          <div className={`relative bg-gradient-to-b from-[#0a2540] to-master-deep border border-master-primary/30 rounded-[2.5rem] p-12 shadow-[0_40px_100px_-20px_rgba(0,102,166,0.3)] mb-8 reveal-scale reveal-delay-1 overflow-hidden ${isVisible ? 'visible' : ''}`}>
             {/* Aurora interna ao card */}
             <div
               className="aurora-blob w-[70%] h-[70%] top-[-20%] right-[-15%]"
@@ -88,9 +88,9 @@ const Pricing: React.FC = () => {
             <div className="relative z-10">
               <div className="mb-6">
                 {/* Badge de lançamento */}
-                <div className="inline-flex items-center gap-1.5 bg-amber-400/15 border border-amber-400/30 rounded-full px-4 py-1.5 mb-5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></div>
-                  <span className="text-[10px] font-black text-amber-400 uppercase tracking-[0.2em] font-heading">Preço de lançamento</span>
+                <div className="inline-flex items-center gap-1.5 bg-master-gold/15 border border-master-gold/30 rounded-full px-4 py-1.5 mb-5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-master-gold animate-pulse"></div>
+                  <span className="text-[10px] font-black text-master-gold uppercase tracking-[0.2em] font-heading">Preço de lançamento</span>
                 </div>
 
                 <div className="flex items-baseline justify-center gap-3 mb-2">
