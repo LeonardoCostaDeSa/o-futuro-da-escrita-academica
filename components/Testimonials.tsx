@@ -5,25 +5,28 @@ import { useCursorGlow } from '../hooks/useCursorGlow';
 
 const testimonials = [
   {
-    quote: "Precisei fazer uma consulta sobre a apresentação para a banca de mestrado. Ainda bem que encontrei essa profissional no meu caminho! É super didática, domina a oratória e entende realmente do assunto. Gratidão!",
+    quote: "Eu estava travada com a apresentação da banca do mestrado. O método da Dra. Gabriela me deu estrutura para organizar os argumentos e confiança para defender. Super didática, domina o assunto e entende a pressão que a gente sente. Gratidão!",
     name: "Luciene Luiza",
-    role: "Mestrado · Local Guide",
+    role: "Mestrado",
     initials: "L.L.",
     color: "bg-purple-500",
+    stars: 5,
   },
   {
-    quote: "A Gabi foi essencial no meu processo de TCC, com orientações e correções que fizeram toda a diferença em cada etapa. Seu apoio foi fundamental para o meu crescimento durante esse período. Ela é super atenciosa, dedicada e uma pessoa incrível. Recomendo muito!",
+    quote: "O método foi essencial no meu TCC. As orientações e a estrutura de escrita fizeram toda a diferença em cada etapa — da justificativa à conclusão. Me senti acompanhada durante todo o processo. Super atenciosa e dedicada. Recomendo muito!",
     name: "Karen Oliveira Barbosa",
     role: "TCC",
     initials: "K.O.",
     color: "bg-blue-500",
+    stars: 5,
   },
   {
-    quote: "Contratar o serviço da Gabi foi a melhor coisa que eu fiz para o meu TCC. Me ajudou a passar por essa fase com muito mais tranquilidade e segurança. Ela é uma excelente profissional e entregou um trabalho acadêmico impecável. Eu ganhei nota 10 e ela foi parte integral disso. Recomendo de olhos fechados!",
+    quote: "Aprender o método da Dra. Gabriela foi a melhor decisão que tomei para o meu TCC. Me ajudou a passar por essa fase com muito mais tranquilidade e segurança. Eu ganhei nota 10 e o método foi parte integral disso. Recomendo de olhos fechados!",
     name: "Tarsila Ceruci",
     role: "TCC · Nota 10",
     initials: "T.C.",
     color: "bg-amber-500",
+    stars: 5,
   },
 ];
 
@@ -66,7 +69,7 @@ const Testimonials: React.FC = () => {
               <span className="absolute top-4 right-6 text-7xl font-black text-white/5 leading-none select-none font-heading">"</span>
 
               {/* Avatar */}
-              <div className="flex items-center gap-3 mb-6 relative z-10">
+              <div className="flex items-center gap-3 mb-4 relative z-10">
                 <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center flex-shrink-0`}>
                   <span className="text-white text-xs font-black font-heading">{t.initials}</span>
                 </div>
@@ -74,6 +77,15 @@ const Testimonials: React.FC = () => {
                   <p className="text-white text-xs font-black font-heading">{t.name}</p>
                   <p className="text-master-accent text-[10px] font-black uppercase tracking-[0.2em] font-heading mt-0.5">{t.role}</p>
                 </div>
+              </div>
+
+              {/* Estrelas */}
+              <div className="flex gap-0.5 mb-4 relative z-10" aria-label={`${t.stars} de 5 estrelas`}>
+                {Array.from({ length: t.stars }).map((_, s) => (
+                  <svg key={s} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
               </div>
 
               <p className="text-master-light/80 leading-relaxed font-normal italic relative z-10">"{t.quote}"</p>

@@ -65,9 +65,12 @@ const Pricing: React.FC = () => {
                 </li>
               </ul>
               <div className="border-t border-white/10 pt-3 flex items-center justify-between">
-                <span className="text-xs font-black text-master-light/50 font-heading uppercase tracking-wider">Total em conteúdo</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-black text-master-light/50 font-heading uppercase tracking-wider">Total em conteúdo</span>
+                  <span className="inline-flex items-center bg-emerald-500/15 border border-emerald-500/30 rounded-full px-2.5 py-0.5 text-[9px] font-black text-emerald-400 uppercase tracking-wider font-heading">-46%</span>
+                </div>
                 <div className="text-right">
-                  <span className="text-master-light/30 line-through text-sm mr-2">R$638</span>
+                  <span className="text-master-light/40 line-through text-sm mr-2">R$638</span>
                   <span className="text-master-accent font-black text-sm font-heading">R$347</span>
                 </div>
               </div>
@@ -84,6 +87,12 @@ const Pricing: React.FC = () => {
 
             <div className="relative z-10">
               <div className="mb-6">
+                {/* Badge de lançamento */}
+                <div className="inline-flex items-center gap-1.5 bg-amber-400/15 border border-amber-400/30 rounded-full px-4 py-1.5 mb-5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></div>
+                  <span className="text-[10px] font-black text-amber-400 uppercase tracking-[0.2em] font-heading">Preço de lançamento</span>
+                </div>
+
                 <div className="flex items-baseline justify-center gap-3 mb-2">
                   <span className="text-[10px] font-bold text-master-accent uppercase font-heading tracking-[0.2em]">12x</span>
                   <span className="text-7xl font-black tracking-tighter font-heading">R$34,70</span>
@@ -116,7 +125,12 @@ const Pricing: React.FC = () => {
               >
                 Quero começar agora — 12x de R$34,70
               </button>
-              <p className="text-master-light/25 text-xs mb-4">Acesso imediato. Pagamento único. Sem mensalidade.</p>
+              <div className="flex items-center justify-center gap-1.5 text-master-light/30 mb-4">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+                <span className="text-xs">Compra segura · Acesso imediato · Sem mensalidade</span>
+              </div>
               <p className="text-master-light/20 text-xs mb-10 font-normal">Mais de 300 pesquisadores já aplicaram este método. Sua vez.</p>
 
               <div className="h-px bg-white/5 mb-10"></div>
@@ -160,10 +174,12 @@ const Pricing: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mt-2 opacity-50 hover:opacity-80 transition-opacity duration-500">
-            <img src="https://img.icons8.com/color/48/ffffff/visa.png" className="h-5" alt="Visa" />
-            <img src="https://img.icons8.com/color/48/ffffff/mastercard.png" className="h-5" alt="Mastercard" />
-            <img src="https://img.icons8.com/color/48/ffffff/pix.png" className="h-5" alt="Pix" />
+          <div className="flex items-center justify-center gap-3 mt-2 opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">VISA</span>
+            <span className="text-master-light/20">·</span>
+            <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">MASTERCARD</span>
+            <span className="text-master-light/20">·</span>
+            <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">PIX</span>
           </div>
         </div>
       </section>

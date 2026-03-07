@@ -12,6 +12,7 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import PainDivider from './components/PainDivider';
+import StickyCTA from './components/StickyCTA';
 
 const App: React.FC = () => {
   return (
@@ -27,19 +28,9 @@ const App: React.FC = () => {
 
         <Features />
         <Modules />
-
-        <PainDivider
-          message="Meu orientador sumiu. A defesa está chegando."
-        />
-
         <Instructor />
-        <Audience />
-
-        <PainDivider
-          message="Parece que só eu não estou conseguindo."
-        />
-
         <Testimonials />
+        <Audience />
 
         <PainDivider
           message="Será que a banca vai me reprovar?"
@@ -50,6 +41,7 @@ const App: React.FC = () => {
         <FinalCTA />
       </main>
       <Footer />
+      <StickyCTA />
     </div>
   );
 };
