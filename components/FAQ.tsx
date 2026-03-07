@@ -4,36 +4,40 @@ import { useReveal } from '../hooks/useReveal';
 
 const faqs = [
   {
-    q: "Nunca usei IA. Vou conseguir acompanhar?",
-    a: "Sim, sem nenhum problema. O método foi desenhado para quem parte do zero — você não precisa saber nada sobre IA antes de começar. As primeiras aulas constroem os fundamentos: o que são modelos de linguagem, como funcionam e por que comportam de determinada forma. A partir daí, cada passo é aplicado diretamente ao seu trabalho acadêmico, com exemplos reais e progressão clara.",
+    q: "Nunca usei IA. Isso vai ser um problema?",
+    a: "Não, nenhum. O método foi desenhado para quem parte do zero — você não precisa saber nada sobre IA antes de começar. As primeiras aulas constroem os fundamentos: o que são modelos de linguagem, como funcionam e por que se comportam de determinada forma. A partir daí, cada passo é aplicado diretamente ao seu trabalho acadêmico, com exemplos reais e progressão clara. Quem chegou sem saber nada aprendeu. É assim que o método foi construído.",
   },
   {
-    q: "A banca pode questionar o uso de IA?",
-    a: "Essa é a dúvida mais comum — e faz todo sentido tê-la. A resposta direta: depende de como você usa. O método existe justamente para que você use IA com rastreabilidade total, auditoria humana e responsabilidade autoral. Você vai saber explicar cada escolha metodológica, cada fonte utilizada e cada argumento construído. Quando a banca questionar, você responde — não com improviso, mas com estrutura.",
+    q: "A banca vai me questionar por usar IA?",
+    a: "Essa é a dúvida mais comum — e faz todo sentido tê-la. A resposta direta: depende de como você usa. O método existe justamente para que você use IA com rastreabilidade total, auditoria humana e responsabilidade autoral. Você vai saber explicar cada escolha metodológica, cada fonte utilizada e cada argumento construído. Quando a banca questionar, você responde — não com improviso, mas com estrutura. A diferença entre quem se expõe e quem se protege está no método.",
   },
   {
-    q: "Funciona para qualquer área?",
-    a: "Sim. O método é estruturante — ele trabalha com a lógica da construção acadêmica, não com o conteúdo específico de cada área. Temos alunos de Psicologia, Engenharia, Direito, Administração, Ciências Biológicas, Educação e outros campos. O que muda é o estilo das fontes e o vocabulário técnico. O raciocínio de como construir um argumento sustentável é universal.",
+    q: "Funciona para a minha área especificamente?",
+    a: "Sim. O método é estruturante — ele trabalha com a lógica da construção acadêmica, não com o conteúdo específico de cada campo. Temos alunos de Psicologia, Engenharia, Direito, Administração, Ciências Biológicas, Educação, Saúde e dezenas de outras áreas. O que muda é o estilo das fontes e o vocabulário técnico. O raciocínio de como construir um argumento sustentável é universal.",
   },
   {
-    q: "É só para pós-graduação?",
-    a: "Não. O método cobre TCC de graduação, dissertações de mestrado e teses de doutorado. A diferença está no nível de profundidade que cada etapa exige — mas a estrutura base é a mesma. Muitos alunos que aplicam o método no TCC voltam durante o mestrado porque o sistema continua funcionando. É um investimento que cresce com você.",
+    q: "Funciona para TCC também, ou é só para pós?",
+    a: "O método cobre TCC de graduação, dissertações de mestrado e teses de doutorado. A diferença está no nível de profundidade que cada etapa exige — mas a estrutura base é a mesma. Muitos alunos que aplicam o método no TCC voltam durante o mestrado porque o sistema continua funcionando. É um investimento que cresce com você.",
   },
   {
-    q: "Não tenho tempo — minha defesa é em poucos meses.",
-    a: "Esse é exatamente o cenário para o qual o método foi criado. Você não vai acrescentar mais tarefas à sua rotina — vai organizar o que já está em andamento com mais clareza. As primeiras aulas focam em diagnóstico: onde você está, o que falta e o que pode ser acelerado com IA sem perder qualidade. Alunos com prazo curto costumam sentir o impacto nas primeiras semanas de aplicação.",
+    q: "Minha defesa é em poucos meses. Dá tempo de aplicar?",
+    a: "Esse é exatamente o cenário para o qual o método foi criado. Você não vai acrescentar mais tarefas à sua rotina — vai organizar o que já está em andamento com mais clareza e velocidade. As primeiras aulas focam em diagnóstico: onde você está, o que falta e o que pode ser acelerado com IA sem perder qualidade. Alunos com prazo curto costumam sentir o impacto nas primeiras semanas de aplicação.",
   },
   {
-    q: "O Turnitin ou meu orientador vai me reprovar por usar IA?",
-    a: "A confusão aqui é entre uso generativo e uso metodológico. Copiar texto de IA é um risco real. Usar IA para organizar raciocínio, revisar estrutura e mapear fontes — com auditoria sua sobre cada etapa — é uma prática diferente, rastreável e defensável. O método te ensina a fazer essa distinção com clareza e a documentar seu processo de forma que qualquer orientador possa acompanhar.",
+    q: "O Turnitin vai me pegar? E se meu orientador não aceitar IA?",
+    a: "A confusão aqui é entre uso generativo e uso metodológico. Copiar texto de IA é um risco real — e o método te ensina exatamente por que isso é um problema. Usar IA para organizar raciocínio, revisar estrutura e mapear fontes — com auditoria sua sobre cada etapa — é uma prática diferente, rastreável e defensável. O método te ensina a documentar seu processo de forma que qualquer orientador possa acompanhar e validar.",
   },
   {
     q: "R$347 é muito para o meu momento atual.",
-    a: "Entendo a preocupação — e ela merece uma resposta honesta. Uma hora com um orientador particular custa, em média, mais do que o valor total do curso. Aqui você tem um sistema aplicável agora, nas próximas sessões de escrita, e que continua válido do TCC ao doutorado. Além disso, existe a garantia de 7 dias: se você entrar, acessar o conteúdo e sentir que não vale, devolvemos tudo. O risco financeiro é zero.",
+    a: "Entendo a preocupação — e ela merece uma resposta honesta. Uma hora com um orientador particular custa, em média, mais do que o valor total do curso. Aqui você tem um sistema aplicável agora, nas próximas sessões de escrita, e que continua válido do TCC ao doutorado — incluindo 3 bônus com valor de R$291. Além disso, existe a garantia de 7 dias: se você entrar, acessar o conteúdo e sentir que não vale, devolvemos tudo. O risco financeiro é zero.",
   },
   {
-    q: "Quais são as formas de pagamento disponíveis?",
-    a: "O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até 12x — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$347 à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.",
+    q: "Quais são as formas de pagamento?",
+    a: "O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até 12x de R$34,70 — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$347 à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.",
+  },
+  {
+    q: "Como sei se este método realmente funciona para o meu caso?",
+    a: "A resposta mais honesta: você só vai saber depois de aplicar. Por isso a garantia de 7 dias existe. Você entra, acessa o conteúdo, aplica nas primeiras aulas ao seu trabalho real — e decide. Se em até 7 dias você não sentir que o método faz sentido para o seu contexto, devolvemos cada centavo, sem burocracia e sem precisar justificar. Sem risco para você.",
   },
 ];
 
@@ -54,8 +58,9 @@ const FAQ: React.FC = () => {
             <span className="h-px w-8 bg-master-accent"></span>
           </div>
           <h2 className="text-3xl font-black text-master-deep font-heading uppercase tracking-tighter">
-            Perguntas importantes antes de decidir
+            Ainda com alguma dúvida?
           </h2>
+          <p className="text-master-slate/40 text-sm font-normal mt-2">Provavelmente ela está aqui.</p>
         </div>
 
         <div className="space-y-4">

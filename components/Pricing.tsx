@@ -4,9 +4,9 @@ import { useReveal } from '../hooks/useReveal';
 import EnrollModal from './EnrollModal';
 
 const benefits = [
-  "Acesso completo às aulas",
-  "Atualizações incluídas",
-  "Aplicável em qualquer área acadêmica",
+  "Acesso vitalício a todos os 9 módulos + atualizações futuras",
+  "3 bônus exclusivos incluídos sem custo adicional",
+  "Aplicável agora: TCC, mestrado ou doutorado em qualquer área",
 ];
 
 const Pricing: React.FC = () => {
@@ -36,12 +36,42 @@ const Pricing: React.FC = () => {
           <div className={`reveal ${isVisible ? 'visible' : ''}`}>
             <span className="text-master-accent font-black tracking-[0.5em] uppercase text-[10px] font-heading mb-4 block">Investimento</span>
             <h2 className="text-4xl font-black sm:text-5xl uppercase tracking-tighter font-heading leading-none mb-4">
-              Seu investimento para
+              Um método que você usa
             </h2>
             <h2 className="text-4xl font-black sm:text-5xl tracking-tighter font-heading leading-none mb-6">
-              <span className="text-master-primary italic font-light lowercase font-sans">dominar o método</span>
+              <span className="text-master-primary italic font-light lowercase font-sans">do TCC ao doutorado</span>
             </h2>
-            <p className="text-master-light/40 mb-16 font-normal">Acesso completo ao curso por:</p>
+            <p className="text-master-light/40 mb-10 font-normal">Acesso completo ao curso por:</p>
+
+            {/* Value anchor block */}
+            <div className="border border-white/10 bg-white/5 rounded-2xl p-6 mb-8 text-left">
+              <p className="text-[9px] font-black text-master-accent uppercase tracking-[0.4em] font-heading mb-4">O que você leva</p>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-center justify-between text-xs">
+                  <span className="text-master-light/60 font-normal">Curso completo — 9 módulos</span>
+                  <span className="text-master-light/40 line-through font-normal">R$347</span>
+                </li>
+                <li className="flex items-center justify-between text-xs">
+                  <span className="text-master-light/60 font-normal">Bônus 01 — Checklist de Objetivo</span>
+                  <span className="text-master-light/40 line-through font-normal">R$97</span>
+                </li>
+                <li className="flex items-center justify-between text-xs">
+                  <span className="text-master-light/60 font-normal">Bônus 02 — E-book Hipóteses</span>
+                  <span className="text-master-light/40 line-through font-normal">R$97</span>
+                </li>
+                <li className="flex items-center justify-between text-xs">
+                  <span className="text-master-light/60 font-normal">Bônus 03 — Materiais Complementares</span>
+                  <span className="text-master-light/40 line-through font-normal">R$97</span>
+                </li>
+              </ul>
+              <div className="border-t border-white/10 pt-3 flex items-center justify-between">
+                <span className="text-xs font-black text-master-light/50 font-heading uppercase tracking-wider">Total em conteúdo</span>
+                <div className="text-right">
+                  <span className="text-master-light/30 line-through text-sm mr-2">R$638</span>
+                  <span className="text-master-accent font-black text-sm font-heading">R$347</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={`relative bg-gradient-to-b from-[#0a2540] to-master-deep border border-master-primary/30 rounded-[2.5rem] p-12 shadow-[0_40px_100px_-20px_rgba(0,102,166,0.3)] mb-8 reveal reveal-delay-1 overflow-hidden ${isVisible ? 'visible' : ''}`}>
@@ -84,9 +114,10 @@ const Pricing: React.FC = () => {
                 onClick={() => setIsEnrollOpen(true)}
                 className="btn-shine block w-full py-6 px-8 rounded-2xl font-black text-sm transition-all uppercase tracking-[0.3em] font-heading bg-master-primary border-2 border-master-primary text-white hover:bg-master-accent hover:border-master-accent shadow-2xl shadow-master-primary/20 mb-4 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
               >
-                Garantir minha vaga por 12x de R$34,70
+                Quero começar agora — 12x de R$34,70
               </button>
-              <p className="text-master-light/25 text-xs mb-10">Acesso imediato. Pagamento único. Sem mensalidade.</p>
+              <p className="text-master-light/25 text-xs mb-4">Acesso imediato. Pagamento único. Sem mensalidade.</p>
+              <p className="text-master-light/20 text-xs mb-10 font-normal">Mais de 300 pesquisadores já aplicaram este método. Sua vez.</p>
 
               <div className="h-px bg-white/5 mb-10"></div>
 

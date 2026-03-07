@@ -3,6 +3,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { COURSE_MODULES } from '../constants';
 import { Module } from '../types';
 
+const PHASES = [
+  { label: 'Fase 1 — Fundação', ids: [1, 2, 3, 4], description: 'Antes de escrever, você precisa entender a ferramenta.' },
+  { label: 'Fase 2 — Construção', ids: [5, 6, 7], description: 'Aqui começa o trabalho real. Seção por seção, com método.' },
+  { label: 'Fase 3 — Finalização', ids: [8, 9], description: 'Você estruturou. Hora de finalizar com excelência.' },
+];
+
 const Modules: React.FC = () => {
   const [selectedModule, setSelectedModule] = useState<Module | null>(null);
   const [modalOriginStyle, setModalOriginStyle] = useState<React.CSSProperties>({});
@@ -66,54 +72,72 @@ const Modules: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <div className="inline-block px-6 py-1.5 bg-master-light border border-master-accent/10 rounded-full text-master-primary text-[9px] font-black uppercase tracking-[0.4em] mb-8">
-            Ementa Estratégica
+            O que você vai aprender
           </div>
-          <h2 className="text-4xl font-black text-master-deep sm:text-6xl uppercase tracking-tighter font-heading leading-tight">Arquitetura do <br/><span className="text-master-primary">Conhecimento</span></h2>
-          <p className="mt-10 text-lg text-master-slate/60 font-normal max-w-2xl mx-auto leading-relaxed italic">
-            "Um programa desenhado para quem busca o máximo desempenho na escrita científica, sem comprometer o rigor ético exigido pelas grandes instituições."
+          <h2 className="text-4xl font-black text-master-deep sm:text-6xl tracking-tighter font-heading leading-tight">
+            9 módulos.<br/>
+            <span className="text-master-primary italic font-light lowercase font-sans">Uma jornada completa, da paralisia à defesa.</span>
+          </h2>
+          <p className="mt-8 text-lg text-master-slate/60 font-normal max-w-2xl mx-auto leading-relaxed">
+            Cada módulo foi construído para um problema real. Nenhum conteúdo de preenchimento. Nenhuma aula para assistir sem aplicar.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
-          {COURSE_MODULES.map((module) => (
-            <div
-              key={module.id}
-              className={`card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full ${animatingCardId === module.id ? cardAnimClass : ''}`}
-              onClick={(e) => openModule(module, e)}
-            >
-              <div className="p-10 h-full flex flex-col justify-between">
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex gap-6">
-                    <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/20 group-hover:text-master-accent transition-colors">
-                      {String(module.id).padStart(2, '0')}
-                    </span>
-                    <div className="flex flex-col">
-                      <h3 className="text-lg font-black leading-snug font-heading text-master-deep group-hover:text-master-primary transition-colors mb-3 uppercase tracking-tight">
-                        {module.title}
-                      </h3>
-                      <p className="text-xs text-master-slate/60 leading-relaxed font-normal pr-4 line-clamp-3">
-                        {module.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-1 p-2 rounded-full border border-master-light text-master-accent group-hover:bg-master-accent group-hover:text-white group-hover:border-transparent transition-all duration-300">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
+        <div className="max-w-6xl mx-auto space-y-16">
+          {PHASES.map((phase) => {
+            const phaseModules = COURSE_MODULES.filter(m => phase.ids.includes(m.id));
+            return (
+              <div key={phase.label}>
+                {/* Phase header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-[10px] font-black text-master-accent uppercase tracking-[0.4em] font-heading whitespace-nowrap">{phase.label}</span>
+                  <div className="flex-1 h-px bg-master-light/70"></div>
+                  <span className="text-[10px] text-master-slate/40 font-normal hidden sm:block whitespace-nowrap">{phase.description}</span>
                 </div>
-                <div className="mt-8 pt-6 border-t border-master-light/50 flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-master-slate/40 uppercase tracking-widest group-hover:text-master-primary transition-colors">
-                    {module.lessons.length} Aulas
-                  </span>
-                  <span className="text-[10px] font-bold text-master-primary opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
-                    Ver Detalhes
-                  </span>
+                {/* Modules grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                  {phaseModules.map((module) => (
+                    <div
+                      key={module.id}
+                      className={`card-float group bg-white rounded-3xl overflow-hidden shadow-sm border border-master-light hover:border-master-accent/40 cursor-pointer h-full ${animatingCardId === module.id ? cardAnimClass : ''}`}
+                      onClick={(e) => openModule(module, e)}
+                    >
+                      <div className="p-10 h-full flex flex-col justify-between">
+                        <div className="flex items-start justify-between gap-6">
+                          <div className="flex gap-6">
+                            <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/20 group-hover:text-master-accent transition-colors">
+                              {String(module.id).padStart(2, '0')}
+                            </span>
+                            <div className="flex flex-col">
+                              <h3 className="text-lg font-black leading-snug font-heading text-master-deep group-hover:text-master-primary transition-colors mb-3 tracking-tight">
+                                {module.title}
+                              </h3>
+                              <p className="text-xs text-master-slate/60 leading-relaxed font-normal pr-4 line-clamp-3">
+                                {module.description}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="mt-1 p-2 rounded-full border border-master-light text-master-accent group-hover:bg-master-accent group-hover:text-white group-hover:border-transparent transition-all duration-300 flex-shrink-0">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="mt-8 pt-6 border-t border-master-light/50 flex items-center justify-between">
+                          <span className="text-[10px] font-bold text-master-slate/40 uppercase tracking-widest group-hover:text-master-primary transition-colors">
+                            {module.lessons.length} Aulas
+                          </span>
+                          <span className="text-[10px] font-bold text-master-primary opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
+                            Ver Detalhes
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* ── Bônus ─────────────────────────────────────────────────────── */}
@@ -135,7 +159,7 @@ const Modules: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Bônus 01 */}
-            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
+            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 flex flex-col">
               <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
               <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -151,13 +175,17 @@ const Modules: React.FC = () => {
               <h4 className="font-black text-master-deep font-heading text-sm uppercase tracking-tight mb-3 leading-tight">
                 Checklist de Criação de Objetivo Acadêmico
               </h4>
-              <p className="text-master-slate/60 text-sm leading-relaxed font-normal">
-                Material passo a passo para definir objetivo geral, construir objetivos específicos e alinhar objetivo, problema e hipótese.
+              <p className="text-master-slate/60 text-sm leading-relaxed font-normal flex-1">
+                Material passo a passo para definir objetivo geral, construir objetivos específicos e alinhar objetivo, problema e hipótese — sem deixar margem para questionamentos da banca.
               </p>
+              <div className="mt-5 pt-4 border-t border-master-light/50 flex items-center justify-between">
+                <span className="text-[9px] text-master-slate/30 uppercase tracking-widest font-heading font-black">Valor incluído</span>
+                <span className="text-xs font-black text-amber-600 font-heading">R$97</span>
+              </div>
             </div>
 
             {/* Bônus 02 */}
-            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
+            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 flex flex-col">
               <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
               <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -173,13 +201,17 @@ const Modules: React.FC = () => {
               <h4 className="font-black text-master-deep font-heading text-sm uppercase tracking-tight mb-3 leading-tight">
                 E-book: Hipóteses na Pesquisa Científica
               </h4>
-              <p className="text-master-slate/60 text-sm leading-relaxed font-normal">
-                Material completo de <strong className="text-master-deep font-semibold">60 páginas</strong> cobrindo tipos de hipóteses, como formulá-las e conectá-las com seus objetivos de pesquisa — com exemplos práticos.
+              <p className="text-master-slate/60 text-sm leading-relaxed font-normal flex-1">
+                Material completo de <strong className="text-master-deep font-semibold">60 páginas</strong> cobrindo tipos de hipóteses, como formulá-las e conectá-las com seus objetivos de pesquisa — com exemplos práticos por área.
               </p>
+              <div className="mt-5 pt-4 border-t border-master-light/50 flex items-center justify-between">
+                <span className="text-[9px] text-master-slate/30 uppercase tracking-widest font-heading font-black">Valor incluído</span>
+                <span className="text-xs font-black text-amber-600 font-heading">R$97</span>
+              </div>
             </div>
 
             {/* Bônus 03 */}
-            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60">
+            <div className="card-float relative bg-white rounded-3xl p-8 border border-master-light hover:border-amber-300/60 flex flex-col">
               <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent -translate-y-px rounded-full"></div>
               <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-amber-600 uppercase tracking-[0.3em] font-heading mb-5">
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -195,9 +227,13 @@ const Modules: React.FC = () => {
               <h4 className="font-black text-master-deep font-heading text-sm uppercase tracking-tight mb-3 leading-tight">
                 Materiais Complementares
               </h4>
-              <p className="text-master-slate/60 text-sm leading-relaxed font-normal">
-                Artigos de referência, modelos de estrutura acadêmica, exemplos de escrita científica e materiais de apoio para organização da pesquisa.
+              <p className="text-master-slate/60 text-sm leading-relaxed font-normal flex-1">
+                Artigos de referência, modelos de estrutura acadêmica, exemplos de escrita científica e materiais de apoio para acelerar cada etapa da sua pesquisa.
               </p>
+              <div className="mt-5 pt-4 border-t border-master-light/50 flex items-center justify-between">
+                <span className="text-[9px] text-master-slate/30 uppercase tracking-widest font-heading font-black">Valor incluído</span>
+                <span className="text-xs font-black text-amber-600 font-heading">R$97</span>
+              </div>
             </div>
           </div>
         </div>
@@ -206,11 +242,11 @@ const Modules: React.FC = () => {
         <div className="mt-32 bg-master-deep rounded-[2rem] md:rounded-[3rem] p-8 sm:p-12 md:p-24 text-center text-white shadow-[0_50px_100px_-20px_rgba(4,24,43,0.4)] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h3 className="text-3xl md:text-5xl font-black mb-10 uppercase tracking-tighter font-heading leading-[1.1]">
-              Domine a tecnologia <br/><span className="text-master-accent">com maestria acadêmica</span>
+            <h3 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter font-heading leading-[1.1]">
+              Chega de tentar.<br/><span className="text-master-accent italic font-light lowercase font-sans">Hora de escrever com sistema.</span>
             </h3>
-            <p className="text-master-light/50 mb-12 text-lg font-normal leading-relaxed italic">
-              "Para quem entende que a Inteligência Artificial não substitui o pesquisador, mas amplifica sua capacidade de mudar o mundo."
+            <p className="text-master-light/50 mb-12 text-lg font-normal leading-relaxed">
+              300+ pesquisadores já aplicaram este método. Agora é a sua vez.
             </p>
             <a
               href="#preco"
@@ -220,7 +256,7 @@ const Modules: React.FC = () => {
               }}
               className="btn-shine inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-16 py-5 rounded-2xl font-black text-xs bg-master-primary text-white hover:bg-master-accent hover:scale-105 transition-all shadow-2xl shadow-black/40 uppercase tracking-[0.4em] font-heading"
             >
-              Iniciar Trajetória
+              Quero escrever com método agora
             </a>
           </div>
         </div>

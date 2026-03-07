@@ -3,15 +3,15 @@ import React from 'react';
 import { useReveal } from '../hooks/useReveal';
 
 const learningOutcomes = [
-  "Escrever TCC e dissertações com apoio de Inteligência Artificial",
-  "Criar projetos de pesquisa com estrutura clara e IA",
-  "Escrever artigos científicos com linguagem acadêmica rigorosa",
-  "Analisar artigos e fontes bibliográficas com apoio de IA",
-  "Organizar arquivos e fontes da pesquisa com eficiência",
-  "Construir tabelas e estruturas de análise de dados",
-  "Organizar referências bibliográficas com precisão",
-  "Estruturar e defender argumentos acadêmicos com IA",
-  "Relacionar autores, conceitos e teorias de forma coerente",
+  "Nunca mais travar na primeira linha — do tema ao argumento em uma sessão",
+  "Justificativa e metodologia que resistem a qualquer questionamento de banca",
+  "Escrever com linguagem acadêmica rigorosa sem soar mecânico ou artificial",
+  "Ler e sintetizar referências com velocidade — sem se perder no excesso de fontes",
+  "Organizar seus arquivos e materiais de pesquisa sem depender da memória",
+  "Construir tabelas, análises e estruturas de dados com clareza e método",
+  "Formatar e citar referências com precisão — em minutos, não em horas",
+  "Defender na banca com segurança e clareza — sem surpresas, sem improvisos",
+  "Usar IA como co-piloto de método — não como atalho que te expõe",
 ];
 
 const Features: React.FC = () => {
@@ -31,9 +31,9 @@ const Features: React.FC = () => {
           </div>
 
           <h2 className="text-4xl font-black text-master-deep mb-4 font-heading uppercase tracking-tighter">
-            O que você vai dominar aqui
+            O que muda quando você tem estrutura
           </h2>
-          <p className="text-master-slate/60 mb-14 font-normal text-lg">Você vai aprender a:</p>
+          <p className="text-master-slate/60 mb-14 font-normal text-lg">Não é sobre usar IA. É sobre nunca mais travar, adivinhar ou reescrever do zero.</p>
         </div>
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left mb-14">
@@ -58,7 +58,7 @@ const Features: React.FC = () => {
               href="#preco"
               className="btn-shine inline-flex items-center justify-center px-14 py-5 text-xs font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
-              Quero fazer do jeito certo
+              Quero parar de travar e escrever com método
             </a>
             <span className="text-xs text-master-slate/40 font-normal">Aplicável já na sua próxima sessão de escrita.</span>
           </div>

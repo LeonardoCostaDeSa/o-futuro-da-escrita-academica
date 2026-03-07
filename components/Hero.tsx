@@ -1,8 +1,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-const HEADLINE_LINE1 = 'Escrita Acadêmica';
-const HEADLINE_LINE2 = 'com Inteligência Artificial';
+const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica.';
+const HEADLINE_LINE2 = 'Escreva como pesquisador. Defenda com mérito.';
 
 
 const Hero: React.FC = () => {
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           {/* Eyebrow label */}
           <div className="inline-flex items-center gap-2 mb-8">
             <span className="h-px w-6 bg-master-accent/60"></span>
-            <span className="text-[10px] font-black text-master-primary uppercase tracking-[0.45em] font-heading">Curso Completo com Método</span>
+            <span className="text-[10px] font-black text-master-primary uppercase tracking-[0.45em] font-heading">Método com 300+ Pesquisadores Formados</span>
             <span className="h-px w-6 bg-master-accent/60"></span>
           </div>
 
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
 
           {/* Subtítulo */}
           <p className="text-xl md:text-2xl text-master-slate/60 leading-relaxed font-normal mb-14 max-w-3xl">
-            Aprenda um método acadêmico sólido com Inteligência Artificial — preservando rigor, autoria e segurança diante de qualquer banca.
+            Um método estruturado para escrever TCC, dissertação ou tese com clareza, velocidade e argumentação que resiste a qualquer banca — sem depender de inspiração, sem medo de plágio e sem travar no processo.
           </p>
 
           {/* Vídeo */}
@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
                 href="#preco"
                 className="btn-shine flex items-center justify-center px-14 py-5 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
               >
-                Quero aprender o método
+                Quero escrever com método
               </a>
               <span className="text-xs text-master-slate/40 font-normal">Sem improviso. Sem atalhos.</span>
             </div>

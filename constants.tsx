@@ -4,8 +4,8 @@ import { Module, PricingPlan } from './types';
 export const COURSE_MODULES: Module[] = [
   {
     id: 1,
-    title: "Intro: A Nova Era da Escrita Acadêmica",
-    description: "Introduz a Inteligência Artificial como uma solução inevitável e um 'porto seguro' para o sentimento de abandono e falta de orientação no ambiente acadêmico, preparando o aluno para a metodologia 'mão na massa' do curso.",
+    title: "A virada de chave: IA como método, não muleta",
+    description: "Você não precisa de inspiração para começar. Precisa de método. Este módulo muda a forma como você pensa sobre escrita acadêmica — e apresenta a IA como um sistema de apoio estruturado, não como uma solução mágica.",
     lessons: [
       "Aula 1 — Apresentação, Trajetória e o Desafio da Escrita Acadêmica",
       "Aula 2 — A Inevitabilidade da Inteligência Artificial no Ensino Superior"
@@ -13,16 +13,16 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 2,
-    title: "Fundamentos da IA e Ferramentas",
-    description: "Foca na desmistificação do funcionamento da IA, explicando sua natureza probabilística e diferenciando a fluidez do ChatGPT da precisão e rastreabilidade do NotebookLM para combater os riscos de plágio e 'alucinações'.",
+    title: "Conheça suas ferramentas: o que cada IA faz (e o que não faz)",
+    description: "ChatGPT e NotebookLM não são a mesma coisa. Saber qual usar — e quando — é o que separa quem escreve com segurança de quem vive com medo de citar fonte errada ou cair no Turnitin.",
     lessons: [
       "Aula 1 — Fundamentos da Inteligência Artificial e Ferramentas para Pesquisa Acadêmica"
     ]
   },
   {
     id: 3,
-    title: "Engenharia de Prompts Científicos",
-    description: "Aprofunda a Engenharia de Prompts para pesquisa acadêmica. O aluno aprende a abandonar comandos vagos e a usar uma estrutura baseada em quatro pilares (Instrução, Contexto, Output e Critérios) para obter respostas de alto nível e rigor científico.",
+    title: "A arte de perguntar: como extrair o máximo da IA",
+    description: "Prompt vago, resposta vaga. Aqui você aprende a estrutura exata que transforma comandos em respostas de nível científico — com quatro pilares que mudam o que você consegue da IA de uma vez por todas.",
     lessons: [
       "Aula 1 — Fundamentos do Prompt e a Estrutura de Três Pilares",
       "Aula 2 — Tokens e a Inclusão de Critérios na Escrita Científica",
@@ -31,8 +31,8 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 4,
-    title: "Limitações Técnicas e Análise Crítica",
-    description: "Trata das limitações, vieses e armadilhas tecnológicas da IA. Ensina o aluno a atuar como um auditor, combatendo a prolixidade (a 'encheção de linguiça') e a falsa autoridade gerada pelas máquinas, mantendo o controle estrutural do trabalho.",
+    title: "Detectar, filtrar, confiar: como não ser enganado pela própria ferramenta",
+    description: "A IA mente com confiança. Este módulo te ensina a ser o auditor do seu próprio trabalho — identificando prolixidade, falsa autoridade e armadilhas técnicas antes que a banca as encontre.",
     lessons: [
       "Aula 1 — Introdução às Limitações, Vieses e Barreiras Técnicas da IA",
       "Aula 2 — Objetividade, Falsa Autoridade e o Contraste das Ferramentas",
@@ -41,8 +41,8 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 5,
-    title: "Fundamentos Práticos da Escrita com IA",
-    description: "Transição para a execução prática. Foca em criar o 'norte' da pesquisa por meio da regra 'um verbo, um objetivo' e ensina a converter esse objetivo em strings de busca matemáticas (operadores booleanos) para varrer bases de literatura de forma cirúrgica.",
+    title: "Seu grande norte: do caos à pesquisa com objetivo claro",
+    description: "Pesquisa sem objetivo claro é pesquisa em círculos. Com a regra 'um verbo, um objetivo' e strings booleanas cirúrgicas, você sabe exatamente o que busca — e como encontrar na literatura.",
     lessons: [
       "Aula 1 — Os 5 Pilares Fundamentais do Trabalho Acadêmico e o 'Grande Norte'",
       "Aula 2 — Construindo e Refinando o Objetivo de Pesquisa com IA",
@@ -53,8 +53,8 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 6,
-    title: "Construção e Estruturação do Trabalho",
-    description: "O coração prático do curso. Demonstra o fluxo não-linear da escrita (da justificativa ao resumo final), orquestrando ferramentas de IA (como Elicit, Consensus e Litmaps, junto ao NotebookLM) para extrair dados, elaborar referenciais e discutir achados com máxima rastreabilidade.",
+    title: "Do esqueleto ao texto: construindo cada seção com método",
+    description: "Este é o coração do curso. Do esqueleto inicial à discussão dos resultados, você vai construir cada seção com IA como co-piloto — com rastreabilidade e método em cada parágrafo.",
     lessons: [
       "Aula 1 — O Esqueleto Inicial e a Justificativa de Pesquisa",
       "Aula 2 — Relevância e Impacto da Pesquisa",
@@ -68,8 +68,8 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 7,
-    title: "Refinamento e Redação Avançada",
-    description: "Ensina a lapidar o texto estruturado, convertendo os esqueletos em tópicos para uma redação corrida, fluida e formal. Remove vícios típicos da IA, integra storytelling acadêmico e ancora a formatação visual e a chamada de tabelas corretamente no texto.",
+    title: "Lapidação: de estrutura para redação fluida e acadêmica",
+    description: "Estrutura pronta não é texto pronto. Aqui você converte tópicos em redação corrida, fluida e formal — removendo os vícios da IA e integrando a sua voz de pesquisador de forma natural.",
     lessons: [
       "Aula 1 — Transformação de Tópicos em Texto Corrido com Engenharia de Prompts",
       "Aula 2 — Refinamento Estrutural: Clareza, Coerência e Rastreabilidade",
@@ -78,8 +78,8 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 8,
-    title: "Formatação Acadêmica e Automatização",
-    description: "Desmistifica normas como a ABNT e revoluciona a formatação substituindo o trabalho manual pela automação. Utiliza os 'Estilos' do Word para gerar sumários rápidos e aplica IAs, extensões e gerenciadores (como Mendeley) para lidar com referências complexas.",
+    title: "Formatação sem sofrimento: ABNT, Word e referências no automático",
+    description: "ABNT não precisa ser sofrimento. Com os 'Estilos' do Word e gerenciadores como Mendeley, você formata em minutos o que antes levava horas — sem perder nenhuma norma e sem retrabalho.",
     lessons: [
       "Aula 1 — Fundamentos da Formatação Acadêmica e Normas Técnicas",
       "Aula 2 — Formatação Prática no Microsoft Word e Automatização Estrutural",
@@ -88,8 +88,8 @@ export const COURSE_MODULES: Module[] = [
   },
   {
     id: 9,
-    title: "Ética, Segurança e Diretrizes",
-    description: "Foca na postura ética e madura do pesquisador. Desmonta o medo de detectores falhos de IA (como o Turnitin), diferencia autoplágio do uso generativo, alerta para os riscos da LGPD exigindo a anonimização de dados e detalha as normas emergentes para a citação transparente do uso de IAs nas publicações.",
+    title: "IA com responsabilidade: ética, plágio e transparência que protegem você",
+    description: "Usar IA não é trapaça — desde que você saiba o que está fazendo. Ética, detecção de plágio, LGPD e como citar IA de forma transparente: tudo que garante que seu trabalho seja irrefutável.",
     lessons: [
       "Aula 1 — Detecção de IA, Responsabilidade Autoral e Plágio",
       "Aula 2 — Segurança de Dados, Privacidade e LGPD",

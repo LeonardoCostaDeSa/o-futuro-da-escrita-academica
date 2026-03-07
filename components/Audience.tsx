@@ -3,17 +3,17 @@ import React from 'react';
 import { useReveal } from '../hooks/useReveal';
 
 const notFor = [
-  "Quer copiar e colar texto pronto",
-  'Procura "prompt mágico"',
-  "Quer terminar o trabalho sem entender o que está fazendo",
-  "Não está disposto a revisar criticamente o próprio texto",
+  "Quer uma IA que escreva o trabalho completo por você",
+  "Busca atalho para não estudar o conteúdo da pesquisa",
+  "Quer entregar o trabalho sem entender o que escreveu",
+  "Não está disposto a revisar e assumir o que assina",
 ];
 
 const forYou = [
-  "Autonomia sobre cada linha que você escreve",
-  "Clareza sobre objetivo, método e argumento",
-  "Estrutura que resiste a qualquer pergunta de banca",
-  "Segurança real — antes, durante e depois da defesa",
+  "Escrever com segurança — sem medo de banca, plágio ou detector de IA",
+  "Entender cada argumento que coloca no papel, e saber defendê-lo",
+  "Ter um método replicável: do TCC ao doutorado, a mesma estrutura",
+  "Usar IA de forma rastreável, ética e que qualquer orientador aceite",
 ];
 
 const Audience: React.FC = () => {
@@ -32,7 +32,7 @@ const Audience: React.FC = () => {
             <span className="h-px w-8 bg-master-accent"></span>
           </div>
           <h2 className="text-4xl font-black text-master-deep font-heading uppercase tracking-tighter">
-            Antes de continuar, seja honesto
+            Este curso é para você?
           </h2>
         </div>
 
@@ -69,10 +69,13 @@ const Audience: React.FC = () => {
               href="#preco"
               className="btn-shine inline-flex items-center justify-center w-full px-8 py-4 text-xs font-black rounded-2xl text-white bg-master-primary hover:bg-master-accent transition-all uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
-              Quero fazer parte desse grupo
+              Me identifico, quero entrar →
             </a>
           </div>
         </div>
+        <p className={`text-center text-sm text-master-slate/35 font-normal mt-10 reveal ${isVisible ? 'visible' : ''}`}>
+          Se você se reconheceu no lado direito, está no lugar certo.
+        </p>
       </div>
     </section>
   );
