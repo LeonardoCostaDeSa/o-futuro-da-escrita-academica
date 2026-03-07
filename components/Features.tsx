@@ -2,16 +2,46 @@
 import React from 'react';
 import { useReveal } from '../hooks/useReveal';
 
-const learningOutcomes = [
-  "Nunca mais travar na primeira linha — do tema ao argumento em uma sessão",
-  "Justificativa e metodologia que resistem a qualquer questionamento de banca",
-  "Escrever com linguagem acadêmica rigorosa sem soar mecânico ou artificial",
-  "Ler e sintetizar referências com velocidade — sem se perder no excesso de fontes",
-  "Organizar seus arquivos e materiais de pesquisa sem depender da memória",
-  "Construir tabelas, análises e estruturas de dados com clareza e método",
-  "Formatar e citar referências com precisão — em minutos, não em horas",
-  "Defender na banca com segurança e clareza — sem surpresas, sem improvisos",
-  "Usar IA como co-piloto de método — não como atalho que te expõe",
+const outcomeGroups = [
+  {
+    label: 'Escrita',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+      </svg>
+    ),
+    items: [
+      "Nunca mais travar na primeira linha — do tema ao argumento em uma sessão",
+      "Escrever com linguagem acadêmica rigorosa sem soar mecânico ou artificial",
+      "Formatar e citar referências com precisão — em minutos, não em horas",
+    ],
+  },
+  {
+    label: 'Pesquisa',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+      </svg>
+    ),
+    items: [
+      "Ler e sintetizar referências com velocidade — sem se perder no excesso de fontes",
+      "Organizar seus arquivos e materiais de pesquisa sem depender da memória",
+      "Construir tabelas, análises e estruturas de dados com clareza e método",
+    ],
+  },
+  {
+    label: 'Defesa',
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.17-.576-4.207-1.598-5.964A11.959 11.959 0 0012 2.714z" />
+      </svg>
+    ),
+    items: [
+      "Justificativa e metodologia que resistem a qualquer questionamento de banca",
+      "Defender na banca com segurança e clareza — sem surpresas, sem improvisos",
+      "Usar IA como co-piloto de método — não como atalho que te expõe",
+    ],
+  },
 ];
 
 const Features: React.FC = () => {
@@ -36,19 +66,37 @@ const Features: React.FC = () => {
           <p className="text-master-slate/60 mb-14 font-normal text-lg">Não é sobre usar IA. É sobre nunca mais travar, adivinhar ou reescrever do zero.</p>
         </div>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left mb-14">
-          {learningOutcomes.map((item, i) => (
-            <li
-              key={i}
-              className={`card-float flex items-start gap-4 bg-white rounded-2xl p-6 border border-master-light/50 hover:border-master-accent/30 reveal reveal-delay-${Math.min(i + 1, 7)} ${isVisible ? 'visible' : ''}`}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left mb-14">
+          {outcomeGroups.map((group, gi) => (
+            <div
+              key={gi}
+              className={`reveal reveal-delay-${gi + 1} ${isVisible ? 'visible' : ''}`}
             >
-              <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-master-accent shadow-[0_0_10px_rgba(43,156,212,0.8)]"></div>
-              <span className="text-master-slate/80 font-normal leading-relaxed">{item}</span>
-            </li>
-          ))}
-        </ul>
+              {/* Category header */}
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-xl bg-master-primary/10 flex items-center justify-center text-master-primary flex-shrink-0">
+                  {group.icon}
+                </div>
+                <h3 className="text-xs font-black text-master-deep uppercase tracking-[0.3em] font-heading">{group.label}</h3>
+              </div>
 
-        <div className={`reveal reveal-delay-7 ${isVisible ? 'visible' : ''}`}>
+              {/* Items */}
+              <ul className="space-y-3">
+                {group.items.map((item, i) => (
+                  <li
+                    key={i}
+                    className="card-float flex items-start gap-4 bg-white rounded-2xl p-5 border border-master-light/50 hover:border-master-accent/30"
+                  >
+                    <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-master-accent shadow-[0_0_10px_rgba(43,156,212,0.8)]"></div>
+                    <span className="text-master-slate/80 font-normal leading-relaxed text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className={`reveal reveal-delay-4 ${isVisible ? 'visible' : ''}`}>
           <p className="text-master-slate/40 text-sm mb-10 font-normal italic">
             Sem depender de sorte. Sem depender de inspiração.
           </p>

@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
             onClick={(e) => handleScroll(e, 'preco')}
             className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
-            Garantir minha vaga
+            Matricule-se — 12x R$34,70
           </a>
         </div>
       </div>

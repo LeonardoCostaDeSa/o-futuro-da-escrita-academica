@@ -4,6 +4,9 @@ import React, { useEffect, useRef, useState } from 'react';
 const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
 const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
 
+// Quando o vídeo estiver pronto, cole a URL aqui (ex: "https://www.youtube.com/embed/VIDEO_ID")
+const YOUTUBE_EMBED_URL: string | null = null;
+
 
 const Hero: React.FC = () => {
   const [wordsVisible, setWordsVisible] = useState(false);
@@ -79,28 +82,51 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-xl md:text-2xl text-master-slate/60 leading-relaxed font-normal mb-14 max-w-3xl">
-           </p>
+          <p className="text-lg md:text-xl text-master-slate/60 leading-relaxed font-normal mb-8 max-w-2xl">
+            Sem tempo, sem orientação, sem saber por onde começar? O método que já ajudou 300+ pesquisadores a escrever com clareza, rigor e segurança.
+          </p>
+
+          {/* CTA primário — acima do fold no mobile */}
+          <div id="hero-cta" className="flex flex-col items-center gap-3 mb-14">
+            <a
+              href="#preco"
+              className="btn-shine flex items-center justify-center px-14 py-5 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
+            >
+              Quero escrever com método
+            </a>
+            <span className="text-xs text-master-slate/40 font-normal">12x de R$34,70 · Acesso imediato</span>
+          </div>
 
           {/* Vídeo */}
           <div className="w-full max-w-4xl mx-auto mb-10 px-4">
-            <div className="relative aspect-video bg-master-deep rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light group cursor-pointer transition-transform duration-500 hover:scale-[1.01]">
-              <div className="absolute inset-0 bg-gradient-to-tr from-master-deep via-master-slate/90 to-master-primary/20"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-master-accent blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                  <div className="relative w-24 h-24 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20 group-hover:scale-110 transition-transform duration-500">
-                    <svg className="w-8 h-8 text-white ml-1.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+            {YOUTUBE_EMBED_URL ? (
+              <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light">
+                <iframe
+                  src={YOUTUBE_EMBED_URL}
+                  title="Apresentação do Método — Escrita Acadêmica com IA"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="relative aspect-video bg-master-deep rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-tr from-master-deep via-master-slate/90 to-master-primary/20"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative flex flex-col items-center gap-4">
+                    <div className="relative w-20 h-20 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                      <svg className="w-7 h-7 text-white/60 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <span className="text-[10px] text-white/30 font-black uppercase tracking-[0.3em] font-heading">Vídeo em breve</span>
                   </div>
                 </div>
+                <div className="absolute bottom-6 left-8 right-8 flex items-center justify-center">
+                  <span className="text-[10px] text-white/25 font-normal">Apresentação do método — disponível em breve</span>
+                </div>
               </div>
-              <div className="absolute bottom-6 left-8 right-8 flex items-center justify-between">
-                <span className="text-[10px] text-white/40 font-black uppercase tracking-widest font-heading">Apresentação do Método</span>
-                <span className="text-[10px] text-white/30 font-normal">▶ Assista antes de decidir</span>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Social Proof — Bloco de Autoridade */}
@@ -127,22 +153,13 @@ const Hero: React.FC = () => {
           {/* Post-video hook */}
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-master-slate/40 text-xs uppercase tracking-[0.4em] font-heading font-black mb-8">
-              Se o vídeo fez sentido para você…
+              A verdade que ninguém te conta na academia
             </p>
             <p className="text-3xl md:text-4xl font-black text-master-deep leading-tight font-heading mb-4">
               Você não precisa de mais esforço.<br/>
               <span className="text-master-primary">Você precisa de estrutura.</span>
             </p>
             <p className="text-lg text-master-slate/50 mb-12">E estrutura pode ser aprendida.</p>
-            <div className="flex flex-col items-center gap-3">
-              <a
-                href="#preco"
-                className="btn-shine flex items-center justify-center px-14 py-5 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
-              >
-                Quero escrever com método
-              </a>
-              <span className="text-xs text-master-slate/40 font-normal">Sem improviso. Sem atalhos.</span>
-            </div>
           </div>
 
           {/* Scroll Cue */}
