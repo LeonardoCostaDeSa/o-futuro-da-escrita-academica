@@ -64,7 +64,7 @@ const Instructor: React.FC = () => {
             </div>
           </div>
 
-          <div className={`lg:col-span-7 reveal reveal-delay-2 ${isVisible ? 'visible' : ''}`}>
+          <div className={`lg:col-span-7 reveal-right reveal-delay-2 ${isVisible ? 'visible' : ''}`}>
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="h-px w-8 bg-master-accent"></span>
               <span className="text-master-primary font-black tracking-[0.4em] uppercase text-[10px] font-heading">Quem conduz você nesse processo</span>
@@ -84,7 +84,7 @@ const Instructor: React.FC = () => {
               ))}
             </ul>
 
-            <div className="bg-master-offwhite rounded-2xl p-8 mb-8 border border-master-light/50">
+            <div className="bg-master-offwhite rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-md rounded-br-md p-8 mb-8 border border-master-light/50">
               <p className="text-master-slate/50 text-xs mb-3 uppercase tracking-widest font-heading font-black">Eu identifiquei um padrão claro:</p>
               <p className="font-black text-master-deep text-2xl font-heading leading-tight">
                 O problema raramente é falta de capacidade.<br/>

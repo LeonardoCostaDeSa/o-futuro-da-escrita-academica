@@ -38,7 +38,7 @@ const Audience: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Não é para quem */}
-          <div className={`bg-master-offwhite rounded-3xl p-10 border border-master-light/50 reveal reveal-delay-1 ${isVisible ? 'visible' : ''}`}>
+          <div className={`bg-master-offwhite rounded-lg p-10 border border-dashed border-master-slate/20 reveal-left reveal-delay-1 ${isVisible ? 'visible' : ''}`}>
             <h3 className="text-xs font-black uppercase tracking-[0.3em] text-master-slate/40 font-heading mb-8">
               Este curso NÃO é para quem:
             </h3>
@@ -53,7 +53,7 @@ const Audience: React.FC = () => {
           </div>
 
           {/* É para quem */}
-          <div className={`bg-master-deep rounded-3xl p-10 text-white reveal reveal-delay-2 ${isVisible ? 'visible' : ''}`}>
+          <div className={`bg-master-deep rounded-[2rem] p-10 text-white reveal-right reveal-delay-2 ${isVisible ? 'visible' : ''}`}>
             <h3 className="text-xs font-black uppercase tracking-[0.3em] text-master-accent font-heading mb-8">
               Este curso é para quem quer:
             </h3>

@@ -67,7 +67,7 @@ const FAQ: React.FC = () => {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className={`bg-white rounded-2xl border border-master-light/50 overflow-hidden hover:border-master-accent/30 transition-colors reveal reveal-delay-${Math.min(i + 1, 7)} ${isVisible ? 'visible' : ''}`}
+              className={`bg-white rounded-r-xl rounded-l-none border-l-2 ${open === i ? 'border-l-master-accent bg-master-offwhite/30' : 'border-l-transparent hover:border-l-master-accent/40'} overflow-hidden transition-all reveal-blur reveal-delay-${Math.min(i + 1, 7)} ${isVisible ? 'visible' : ''}`}
             >
               <button
                 className="w-full text-left px-8 py-6 flex items-center justify-between gap-4"

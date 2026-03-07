@@ -5,6 +5,7 @@ import { useReveal } from '../hooks/useReveal';
 const outcomeGroups = [
   {
     label: 'Escrita',
+    accentColor: 'border-l-master-primary',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
@@ -18,6 +19,7 @@ const outcomeGroups = [
   },
   {
     label: 'Pesquisa',
+    accentColor: 'border-l-master-accent',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -31,6 +33,7 @@ const outcomeGroups = [
   },
   {
     label: 'Defesa',
+    accentColor: 'border-l-master-green',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.17-.576-4.207-1.598-5.964A11.959 11.959 0 0012 2.714z" />
@@ -63,14 +66,14 @@ const Features: React.FC = () => {
           <h2 className="text-4xl font-black text-master-deep mb-4 font-heading uppercase tracking-tighter">
             O que muda quando você tem estrutura
           </h2>
-          <p className="text-master-slate/60 mb-14 font-normal text-lg">Não é sobre usar IA. É sobre nunca mais travar, adivinhar ou reescrever do zero.</p>
+          <p className="text-master-slate/60 mb-14 font-normal text-lg"></p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left mb-14">
           {outcomeGroups.map((group, gi) => (
             <div
               key={gi}
-              className={`reveal reveal-delay-${gi + 1} ${isVisible ? 'visible' : ''}`}
+              className={`reveal-left reveal-delay-${gi + 1} ${isVisible ? 'visible' : ''}`}
             >
               {/* Category header */}
               <div className="flex items-center gap-3 mb-5">
@@ -85,7 +88,7 @@ const Features: React.FC = () => {
                 {group.items.map((item, i) => (
                   <li
                     key={i}
-                    className="card-float flex items-start gap-4 bg-white rounded-2xl p-5 border border-master-light/50 hover:border-master-accent/30"
+                    className={`card-float flex items-start gap-4 bg-white rounded-r-2xl rounded-bl-2xl rounded-tl-sm p-5 border border-master-light/30 border-l-[3px] ${group.accentColor} hover:shadow-md`}
                   >
                     <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-master-accent shadow-[0_0_10px_rgba(43,156,212,0.8)]"></div>
                     <span className="text-master-slate/80 font-normal leading-relaxed text-sm">{item}</span>
