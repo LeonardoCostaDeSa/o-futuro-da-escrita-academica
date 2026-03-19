@@ -111,9 +111,6 @@
   fbq('init', '24542576182109764');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=24542576182109764&ev=PageView&noscript=1"
-  /></noscript>
   <!-- End Meta Pixel Code -->
 
   <script type="importmap">
@@ -128,6 +125,8 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body class="text-master-deep">
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=24542576182109764&ev=PageView&noscript=1" /></noscript>
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
