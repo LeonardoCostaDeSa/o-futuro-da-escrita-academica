@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
           {/* CTA primário — acima do fold no mobile */}
           <div id="hero-cta" className="flex flex-col items-center gap-3 mb-14">
             <a
-              href="#preco"
+              href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
               className="btn-shine flex items-center justify-center px-14 py-5 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
               Quero escrever com método

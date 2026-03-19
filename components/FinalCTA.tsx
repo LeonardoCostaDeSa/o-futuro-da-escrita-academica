@@ -53,7 +53,7 @@ const FinalCTA: React.FC = () => {
 
         <div className={`flex flex-col items-center gap-4 reveal reveal-delay-2 ${isVisible ? 'visible' : ''}`}>
           <a
-            href="#preco"
+            href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
             className="btn-shine inline-flex items-center justify-center px-16 py-6 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-accent transition-all shadow-[0_20px_60px_-10px_rgba(0,102,166,0.5)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2 focus-visible:ring-offset-master-deep"
           >
             Quero garantir minha vaga agora

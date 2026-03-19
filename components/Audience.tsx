@@ -66,7 +66,7 @@ const Audience: React.FC = () => {
               ))}
             </ul>
             <a
-              href="#preco"
+              href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
               className="btn-shine inline-flex items-center justify-center w-full px-8 py-4 text-xs font-black rounded-2xl text-white bg-master-primary hover:bg-master-accent transition-all uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
               Me identifico, quero entrar →

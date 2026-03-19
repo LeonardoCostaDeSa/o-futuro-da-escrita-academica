@@ -39,7 +39,7 @@ const StickyCTA: React.FC = () => {
           <span className="text-[10px] text-master-slate/50 font-normal">ou R$347 à vista</span>
         </div>
         <a
-          href="#preco"
+          href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
           className="btn-shine flex-shrink-0 px-6 py-3 bg-master-primary text-white text-[10px] font-black rounded-xl uppercase tracking-[0.2em] font-heading hover:bg-master-deep transition-all active:scale-95"
         >
           Quero começar

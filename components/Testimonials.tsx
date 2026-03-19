@@ -95,7 +95,7 @@ const Testimonials: React.FC = () => {
 
         <div className={`text-center reveal reveal-delay-4 ${isVisible ? 'visible' : ''}`}>
           <a
-            href="#preco"
+            href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
             className="btn-shine inline-flex items-center justify-center px-14 py-5 text-xs font-black rounded-2xl text-white border-2 border-white hover:bg-white hover:text-master-deep transition-all uppercase tracking-[0.2em] font-heading focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2 focus-visible:ring-offset-master-deep"
           >
             Quero essa segurança também

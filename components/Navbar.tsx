@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="#preco"
+              href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
               onClick={(e) => handleScroll(e, 'preco')}
               className="btn-shine px-10 py-4 bg-master-deep text-white text-[10px] font-black rounded-2xl hover:bg-master-primary transition-all shadow-xl shadow-master-deep/10 uppercase tracking-[0.25em] font-heading hover:scale-105 active:scale-95"
             >
@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <a
-            href="#preco"
+            href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
             onClick={(e) => handleScroll(e, 'preco')}
             className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
