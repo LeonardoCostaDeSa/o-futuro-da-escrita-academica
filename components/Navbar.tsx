@@ -1,11 +1,13 @@
 
 import React, { useState } from 'react';
 
+const HOTMART_URL = 'https://pay.hotmart.com/O104206161Q';
+
 const navLinks = [
   { label: 'O Método', id: 'sobre' },
   { label: 'Conteúdo', id: 'modulos' },
   { label: 'A Instrutora', id: 'instrutor' },
-  { label: 'Investimento', id: 'preco' },
+  { label: 'Investimento', id: 'preco', href: HOTMART_URL },
 ];
 
 const Navbar: React.FC = () => {
@@ -52,18 +54,12 @@ const Navbar: React.FC = () => {
           {/* Links — desktop */}
           <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                onClick={(e) => handleScroll(e, link.id)}
-                className="text-[10px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.25em] font-heading"
-              >
-                {link.label}
-              </a>
+              link.href
+                ? <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.25em] font-heading">{link.label}</a>
+                : <a key={link.id} href={`#${link.id}`} onClick={(e) => handleScroll(e, link.id)} className="text-[10px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.25em] font-heading">{link.label}</a>
             ))}
             <a
               href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
-              onClick={(e) => handleScroll(e, 'preco')}
               className="btn-shine px-10 py-4 bg-master-deep text-white text-[10px] font-black rounded-2xl hover:bg-master-primary transition-all shadow-xl shadow-master-deep/10 uppercase tracking-[0.25em] font-heading hover:scale-105 active:scale-95"
             >
               Matricule-se
@@ -97,18 +93,12 @@ const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-1">
           {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={(e) => handleScroll(e, link.id)}
-              className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0"
-            >
-              {link.label}
-            </a>
+            link.href
+              ? <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0">{link.label}</a>
+              : <a key={link.id} href={`#${link.id}`} onClick={(e) => handleScroll(e, link.id)} className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0">{link.label}</a>
           ))}
           <a
             href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
-            onClick={(e) => handleScroll(e, 'preco')}
             className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
             Matricule-se — 12x R$34,70
