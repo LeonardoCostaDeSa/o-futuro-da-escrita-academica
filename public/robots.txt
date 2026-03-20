@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://escritaacademicacomia.revisamaster.com/sitemap.xml

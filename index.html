@@ -4,9 +4,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
     <title>Escrita Acadêmica com IA | Método Dra. Gabriela – Revisa Master</title>
-    <meta name="description" content="Aprenda a escrever trabalhos acadêmicos com Inteligência Artificial de forma ética e rastreável. Método da Dra. Gabriela (USP) para TCC, mestrado e doutorado." />
+    <meta name="description" content="Aprenda a escrever TCC, mestrado e doutorado com IA de forma ética e rastreável. Método da Dra. Gabriela (USP). Rigor, autoria e segurança diante de qualquer banca." />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://escritaacademicacomia.revisamaster.com/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Escrita Acadêmica com IA | Método Dra. Gabriela – Revisa Master" />
     <meta property="og:description" content="Pare de improvisar. Aprenda o método acadêmico com IA que preserva rigor, autoria e segurança diante de qualquer banca." />
@@ -14,120 +19,126 @@
     <meta property="og:image" content="https://escritaacademicacomia.revisamaster.com/imgs/image_Gabriela.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Revisa Master" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Escrita Acadêmica com IA | Dra. Gabriela – Revisa Master" />
     <meta name="twitter:description" content="Método acadêmico sólido com IA. Rigor, autoria e segurança para TCC, mestrado e doutorado." />
     <meta name="twitter:image" content="https://escritaacademicacomia.revisamaster.com/imgs/image_Gabriela.png" />
+
+    <!-- Favicons -->
     <link rel="icon" href="/imgs/logo_RM_Transparente.png" type="image/png" />
     <link rel="apple-touch-icon" href="/imgs/logo_RM_Transparente.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              master: {
-                deep: '#04182b',
-                slate: '#132741',
-                offwhite: '#f8f8f8',
-                light: '#f2f3f5',
-                accent: '#2b9cd4',
-                primary: '#0066a6',
-                green: '#01dea9',
-                gold: '#d4af37',
+
+    <!-- Fontes — preconnect + display=swap elimina FOIT e reduz CLS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Course",
+          "name": "O Futuro da Escrita Acadêmica com IA",
+          "description": "Método para escrever TCC, mestrado e doutorado com IA de forma ética, rastreável e defensável diante de qualquer banca.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Revisa Master",
+            "url": "https://escritaacademicacomia.revisamaster.com/"
+          },
+          "instructor": {
+            "@type": "Person",
+            "name": "Dra. Gabriela Verruck",
+            "jobTitle": "Doutora em Ciências",
+            "alumniOf": "Universidade de São Paulo (USP)"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "BRL",
+            "price": "347.00",
+            "availability": "https://schema.org/InStock",
+            "url": "https://pay.hotmart.com/O104206161Q"
+          },
+          "inLanguage": "pt-BR"
+        },
+        {
+          "@type": "Person",
+          "name": "Dra. Gabriela Verruck",
+          "jobTitle": "Doutora em Ciências · USP",
+          "url": "https://escritaacademicacomia.revisamaster.com/",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidade de São Paulo",
+            "alternateName": "USP"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Nunca usei IA. Isso vai ser um problema?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não, nenhum. O método foi desenhado para quem parte do zero com a ferramenta."
               }
             },
-            fontFamily: {
-              sans: ['Questrial', 'sans-serif'],
-              heading: ['Montserrat', 'sans-serif'],
+            {
+              "@type": "Question",
+              "name": "A banca vai me questionar por usar IA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende de como você usa. O método garante rastreabilidade total, auditoria humana e responsabilidade autoral."
+              }
             },
-            animation: {
-              'valuable-glow': 'valuable-glow 3s ease-in-out infinite',
-            },
-            keyframes: {
-              'valuable-glow': {
-                '0%, 100%': { 
-                  'box-shadow': '0 0 10px rgba(43, 156, 212, 0.1)',
-                  'border-color': 'rgba(43, 156, 212, 0.2)' 
-                },
-                '50%': { 
-                  'box-shadow': '0 0 25px rgba(43, 156, 212, 0.4)',
-                  'border-color': 'rgba(43, 156, 212, 0.6)' 
-                },
+            {
+              "@type": "Question",
+              "name": "Funciona para TCC também, ou é só para pós?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O método cobre TCC de graduação, dissertações de mestrado e teses de doutorado."
               }
             }
-          }
+          ]
         }
-      }
+      ]
+    }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Questrial&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Questrial', sans-serif;
-        scroll-behavior: smooth;
-        background-color: #f8f8f8;
-      }
-      h1, h2, h3, h4, .font-heading {
-        font-family: 'Montserrat', sans-serif;
-      }
-      .gradient-master {
-        background: linear-gradient(135deg, #0066a6 0%, #2b9cd4 100%);
-      }
-      .gradient-text-master {
-        background: linear-gradient(90deg, #0066a6, #2b9cd4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
 
-      /* Custom animation for the valuable resource effect */
-      @keyframes valuable-glow {
-        0%, 100% { 
-          box-shadow: 0 0 8px rgba(43, 156, 212, 0.15);
-          border-color: rgba(43, 156, 212, 0.2);
-          transform: scale(1);
-        }
-        50% { 
-          box-shadow: 0 0 20px rgba(43, 156, 212, 0.45);
-          border-color: rgba(43, 156, 212, 0.6);
-          transform: scale(1.02);
-        }
-      }
-      .animate-valuable-glow {
-        animation: valuable-glow 3s ease-in-out infinite;
-      }
-    </style>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '24542576182109764');
-  fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel — carregado após o load para não bloquear FCP/LCP -->
+    <script>
+      window.addEventListener('load', function () {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '24542576182109764');
+        fbq('track', 'PageView');
+      });
+    </script>
 
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body class="text-master-deep">
-    <!-- Meta Pixel noscript fallback -->
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=24542576182109764&ev=PageView&noscript=1" /></noscript>
+    <!-- CSS principal (Tailwind + animações) — injetado pelo Vite build -->
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=24542576182109764&ev=PageView&noscript=1"
+      />
+    </noscript>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
