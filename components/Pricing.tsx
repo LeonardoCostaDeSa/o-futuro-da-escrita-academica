@@ -48,19 +48,19 @@ const Pricing: React.FC = () => {
               <p className="text-[9px] font-black text-master-accent uppercase tracking-[0.4em] font-heading mb-4">O que você leva</p>
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center justify-between text-xs">
-                  <span className="text-master-light/60 font-normal">Curso completo — 9 módulos</span>
+                  <span className="text-master-light/85 font-normal">Curso completo — 9 módulos</span>
                   <span className="text-master-light/40 line-through font-normal">R$347</span>
                 </li>
                 <li className="flex items-center justify-between text-xs">
-                  <span className="text-master-light/60 font-normal">Bônus 01 — Checklist de Objetivo</span>
+                  <span className="text-master-light/85 font-normal">Bônus 01 — Checklist de Objetivo</span>
                   <span className="text-master-light/40 line-through font-normal">R$97</span>
                 </li>
                 <li className="flex items-center justify-between text-xs">
-                  <span className="text-master-light/60 font-normal">Bônus 02 — E-book Hipóteses</span>
+                  <span className="text-master-light/85 font-normal">Bônus 02 — E-book Hipóteses</span>
                   <span className="text-master-light/40 line-through font-normal">R$97</span>
                 </li>
                 <li className="flex items-center justify-between text-xs">
-                  <span className="text-master-light/60 font-normal">Bônus 03 — Materiais Complementares</span>
+                  <span className="text-master-light/85 font-normal">Bônus 03 — Materiais Complementares</span>
                   <span className="text-master-light/40 line-through font-normal">R$97</span>
                 </li>
               </ul>
@@ -127,13 +127,13 @@ const Pricing: React.FC = () => {
               >
                 Quero começar agora — 12x de R$34,70
               </a>
-              <div className="flex items-center justify-center gap-1.5 text-master-light/30 mb-4">
+              <div className="flex items-center justify-center gap-1.5 text-master-light/60 mb-4">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                 </svg>
                 <span className="text-xs">Compra segura · Acesso imediato · Sem mensalidade</span>
               </div>
-              <p className="text-master-light/20 text-xs mb-10 font-normal">Mais de 300 pesquisadores já aplicaram este método. Sua vez.</p>
+              <p className="text-master-light/50 text-xs mb-10 font-normal">Mais de 300 pesquisadores já aplicaram este método. Sua vez.</p>
 
               <div className="h-px bg-white/5 mb-10"></div>
 
@@ -176,7 +176,7 @@ const Pricing: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-3 mt-2 opacity-40 hover:opacity-70 transition-opacity duration-500">
+          <div className="flex items-center justify-center gap-3 mt-2 opacity-40 hover:opacity-70 transition-opacity duration-500" aria-hidden="true">
             <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">VISA</span>
             <span className="text-master-light/20">·</span>
             <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">MASTERCARD</span>
