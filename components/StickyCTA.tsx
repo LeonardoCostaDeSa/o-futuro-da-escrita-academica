@@ -31,7 +31,7 @@ const StickyCTA: React.FC = () => {
   return (
     <div
       className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-transform duration-300 ${visible ? 'translate-y-0' : 'translate-y-full'}`}
-      {...(!visible ? { inert: '' } : {})}
+      {...(!visible ? { inert: true } : {})}
     >
       <div className="bg-white/95 backdrop-blur-xl border-t border-master-light/50 px-4 py-3 flex items-center justify-between gap-3">
         <div className="flex flex-col">

@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
       {/* Mobile drawer */}
       <div
         className={`nav-drawer md:hidden border-t border-master-light/50 bg-white ${isOpen ? 'open' : ''}`}
-        {...(!isOpen ? { inert: '' } : {})}
+        {...(!isOpen ? { inert: true } : {})}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-1">
           {navLinks.map((link) => (
