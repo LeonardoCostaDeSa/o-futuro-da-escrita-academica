@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
 const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
 
-const VIDEO_ID = 'wNmiY_MldNg';
+const VIDEO_ID = 'uupDGYEfMsQ';
 const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
 const VIDEO_EMBED = `https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&iv_load_policy=3&autoplay=1&playsinline=1&disablekb=0&fs=1`;
 
