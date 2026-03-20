@@ -1,3 +1,31 @@
+/* === Tailwind CSS — gerado pelo Vite/PostCSS build === */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES (movidos do <style> inline do index.html)
+   ============================================ */
+@layer base {
+  body {
+    font-family: 'Questrial', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f8f8f8;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.gradient-master {
+  background: linear-gradient(135deg, #0066a6 0%, #2b9cd4 100%);
+}
+.gradient-text-master {
+  background: linear-gradient(90deg, #0066a6, #2b9cd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ============================================
    RESET GLOBAL — sem scroll horizontal
    ============================================ */

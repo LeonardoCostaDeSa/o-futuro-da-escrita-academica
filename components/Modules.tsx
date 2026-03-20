@@ -243,9 +243,9 @@ const Modules: React.FC = () => {
         <div className="mt-32 bg-master-deep rounded-[2rem] md:rounded-[3rem] p-8 sm:p-12 md:p-24 text-center text-white shadow-[0_50px_100px_-20px_rgba(4,24,43,0.4)] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h3 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter font-heading leading-[1.1]">
+            <p className="text-3xl md:text-5xl font-black mb-6 tracking-tighter font-heading leading-[1.1]">
               Chega de tentar.<br/><span className="text-master-accent italic font-light lowercase font-sans">Hora de escrever com sistema.</span>
-            </h3>
+            </p>
             <p className="text-master-light/50 mb-12 text-lg font-normal leading-relaxed">
               300+ pesquisadores já aplicaram este método. Agora é a sua vez.
             </p>
