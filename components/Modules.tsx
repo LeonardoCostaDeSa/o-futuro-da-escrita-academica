@@ -106,7 +106,7 @@ const Modules: React.FC = () => {
                       <div className="p-10 h-full flex flex-col justify-between">
                         <div className="flex items-start justify-between gap-6">
                           <div className="flex gap-6">
-                            <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/40 group-hover:text-master-accent transition-colors" aria-hidden="true">
+                            <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/70 group-hover:text-master-accent transition-colors" aria-hidden="true">
                               {String(module.id).padStart(2, '0')}
                             </span>
                             <div className="flex flex-col">
@@ -125,7 +125,7 @@ const Modules: React.FC = () => {
                           </div>
                         </div>
                         <div className="mt-8 pt-6 border-t border-master-light/50 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-master-slate/60 uppercase tracking-widest group-hover:text-master-primary transition-colors">
+                          <span className="text-[10px] font-bold text-master-slate/70 uppercase tracking-widest group-hover:text-master-primary transition-colors">
                             {module.lessons.length} Aulas
                           </span>
                           <span className="text-[10px] font-bold text-master-primary opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
