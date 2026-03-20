@@ -49,10 +49,6 @@ const Footer: React.FC = () => {
           <p className="text-[10px] text-master-light/50 font-black uppercase tracking-[0.25em]">
             © {new Date().getFullYear()} Revisa Master • Todos os direitos reservados.
           </p>
-          <div className="flex gap-10 text-[9px] font-black text-master-light/50 uppercase tracking-[0.3em]" aria-hidden="true">
-            <span>USP RESEARCH CENTERED</span>
-            <span>ÉTIKA & IA COMPLIANCE</span>
-          </div>
         </div>
       </div>
     </footer>
