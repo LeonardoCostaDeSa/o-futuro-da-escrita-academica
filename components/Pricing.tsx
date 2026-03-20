@@ -176,12 +176,12 @@ const Pricing: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-3 mt-2 opacity-40 hover:opacity-70 transition-opacity duration-500" aria-hidden="true">
-            <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">VISA</span>
-            <span className="text-master-light/20">·</span>
-            <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">MASTERCARD</span>
-            <span className="text-master-light/20">·</span>
-            <span className="text-[10px] font-black text-master-light/60 font-heading tracking-wider">PIX</span>
+          <div className="flex items-center justify-center gap-3 mt-2" aria-hidden="true">
+            <span className="text-[10px] font-black text-white/50 font-heading tracking-wider">VISA</span>
+            <span className="text-white/50">·</span>
+            <span className="text-[10px] font-black text-white/50 font-heading tracking-wider">MASTERCARD</span>
+            <span className="text-white/50">·</span>
+            <span className="text-[10px] font-black text-white/50 font-heading tracking-wider">PIX</span>
           </div>
         </div>
       </section>
