@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Quais são as formas de pagamento?",
-    a: "O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até 12x de R$34,70 — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$347 à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.",
+    a: "O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até 12x de R$35,89 — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$347 à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.",
   },
   {
     q: "Como sei se este método realmente funciona para o meu caso?",

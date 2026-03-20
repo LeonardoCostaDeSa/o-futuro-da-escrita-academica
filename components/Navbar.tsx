@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
             href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
             className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
-            Matricule-se — 12x R$34,70
+            Matricule-se — 12x R$35,89
           </a>
         </div>
       </div>

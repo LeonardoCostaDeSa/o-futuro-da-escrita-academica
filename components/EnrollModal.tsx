@@ -73,7 +73,7 @@ const EnrollModal: React.FC<EnrollModalProps> = ({ isOpen, onClose }) => {
           {/* Preço */}
           <div className="flex items-baseline gap-3 mb-6">
             <span className="text-[10px] font-black text-master-accent uppercase tracking-[0.2em] font-heading">12x</span>
-            <span className="text-5xl font-black text-master-deep tracking-tighter font-heading">R$34,70</span>
+            <span className="text-5xl font-black text-master-deep tracking-tighter font-heading">R$35,89</span>
           </div>
           <p className="text-master-slate/50 text-sm mb-8">ou R$347 à vista no Pix</p>
 

@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
             >
               Quero escrever com método
             </a>
-            <span className="text-xs text-master-slate/40 font-normal">12x de R$34,70 · Acesso imediato</span>
+            <span className="text-xs text-master-slate/40 font-normal">12x de R$35,89 · Acesso imediato</span>
           </div>
 
           {/* Vídeo */}

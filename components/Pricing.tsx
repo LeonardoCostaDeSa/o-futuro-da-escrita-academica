@@ -95,7 +95,7 @@ const Pricing: React.FC = () => {
 
                 <div className="flex items-baseline justify-center gap-3 mb-2">
                   <span className="text-[10px] font-bold text-master-accent uppercase font-heading tracking-[0.2em]">12x</span>
-                  <span className="text-7xl font-black tracking-tighter font-heading">R$34,70</span>
+                  <span className="text-7xl font-black tracking-tighter font-heading">R$35,89</span>
                 </div>
                 <p className="text-master-light/40 text-sm">ou R$347 à vista</p>
               </div>
@@ -125,7 +125,7 @@ const Pricing: React.FC = () => {
                 rel="noopener noreferrer"
                 className="btn-shine block w-full py-6 px-8 rounded-2xl font-black text-sm transition-all uppercase tracking-[0.3em] font-heading bg-master-primary border-2 border-master-primary text-white hover:bg-master-accent hover:border-master-accent shadow-2xl shadow-master-primary/20 mb-4 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2 text-center"
               >
-                Quero começar agora — 12x de R$34,70
+                Quero começar agora — 12x de R$35,89
               </a>
               <div className="flex items-center justify-center gap-1.5 text-master-light/60 mb-4">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
