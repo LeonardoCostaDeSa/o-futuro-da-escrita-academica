@@ -78,7 +78,7 @@ const Modules: React.FC = () => {
             9 módulos.<br/>
             <span className="text-master-primary italic font-light lowercase font-sans">Uma jornada completa, da paralisia à defesa.</span>
           </h2>
-          <p className="mt-8 text-lg text-master-slate/60 font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg text-master-slate/80 font-normal max-w-2xl mx-auto leading-relaxed">
             Cada módulo foi construído para um problema real. Nenhum conteúdo de preenchimento. Nenhuma aula para assistir sem aplicar.
           </p>
         </div>
@@ -90,9 +90,9 @@ const Modules: React.FC = () => {
               <div key={phase.label}>
                 {/* Phase header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <span className="text-[10px] font-black text-master-accent uppercase tracking-[0.4em] font-heading whitespace-nowrap">{phase.label}</span>
+                  <span className="text-[10px] font-black text-master-primary uppercase tracking-[0.4em] font-heading whitespace-nowrap">{phase.label}</span>
                   <div className="flex-1 h-px bg-master-light/70"></div>
-                  <span className="text-[10px] text-master-slate/40 font-normal hidden sm:block whitespace-nowrap">{phase.description}</span>
+                  <span className="text-[10px] text-master-slate/60 font-normal hidden sm:block whitespace-nowrap">{phase.description}</span>
                 </div>
                 {/* Modules grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
@@ -106,14 +106,14 @@ const Modules: React.FC = () => {
                       <div className="p-10 h-full flex flex-col justify-between">
                         <div className="flex items-start justify-between gap-6">
                           <div className="flex gap-6">
-                            <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/20 group-hover:text-master-accent transition-colors">
+                            <span className="text-[10px] font-black tracking-widest font-heading text-master-slate/40 group-hover:text-master-accent transition-colors" aria-hidden="true">
                               {String(module.id).padStart(2, '0')}
                             </span>
                             <div className="flex flex-col">
                               <h3 className="text-lg font-black leading-snug font-heading text-master-deep group-hover:text-master-primary transition-colors mb-3 tracking-tight">
                                 {module.title}
                               </h3>
-                              <p className="text-xs text-master-slate/60 leading-relaxed font-normal pr-4 line-clamp-3">
+                              <p className="text-xs text-master-slate/75 leading-relaxed font-normal pr-4 line-clamp-3">
                                 {module.description}
                               </p>
                             </div>
@@ -125,7 +125,7 @@ const Modules: React.FC = () => {
                           </div>
                         </div>
                         <div className="mt-8 pt-6 border-t border-master-light/50 flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-master-slate/40 uppercase tracking-widest group-hover:text-master-primary transition-colors">
+                          <span className="text-[10px] font-bold text-master-slate/60 uppercase tracking-widest group-hover:text-master-primary transition-colors">
                             {module.lessons.length} Aulas
                           </span>
                           <span className="text-[10px] font-bold text-master-primary opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">

@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-lg md:text-xl text-master-slate/60 leading-relaxed font-normal mb-8 max-w-2xl">
+          <p className="text-lg md:text-xl text-master-slate/80 leading-relaxed font-normal mb-8 max-w-2xl">
             Sem tempo, sem orientação, sem saber por onde começar? O método que já ajudou 300+ pesquisadores a escrever com clareza, rigor e segurança.
           </p>
 

@@ -89,17 +89,16 @@ const Navbar: React.FC = () => {
       {/* Mobile drawer */}
       <div
         className={`nav-drawer md:hidden border-t border-master-light/50 bg-white ${isOpen ? 'open' : ''}`}
-        aria-hidden={!isOpen}
+        {...(!isOpen ? { inert: '' } : {})}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-1">
           {navLinks.map((link) => (
             link.href
-              ? <a key={link.id} tabIndex={isOpen ? 0 : -1} href={link.href} target="_blank" rel="noopener noreferrer" className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0">{link.label}</a>
-              : <a key={link.id} tabIndex={isOpen ? 0 : -1} href={`#${link.id}`} onClick={(e) => handleScroll(e, link.id)} className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0">{link.label}</a>
+              ? <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0">{link.label}</a>
+              : <a key={link.id} href={`#${link.id}`} onClick={(e) => handleScroll(e, link.id)} className="text-[11px] font-black text-master-slate/70 hover:text-master-primary transition uppercase tracking-[0.3em] font-heading py-3 px-2 border-b border-master-light/40 last:border-0">{link.label}</a>
           ))}
           <a
             href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
-            tabIndex={isOpen ? 0 : -1}
             className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
             Matricule-se — 12x R$34,70
