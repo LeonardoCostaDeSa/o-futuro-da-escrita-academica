@@ -4,14 +4,16 @@ import React, { useEffect, useRef, useState } from 'react';
 const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
 const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
 
-// Quando o vídeo estiver pronto, cole a URL aqui (ex: "https://www.youtube.com/embed/VIDEO_ID")
-const YOUTUBE_EMBED_URL: string | null = null;
-
+const VIDEO_ID = 'wNmiY_MldNg';
+const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+const VIDEO_EMBED = `https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&iv_load_policy=3&autoplay=1&playsinline=1&disablekb=0&fs=1`;
 
 const Hero: React.FC = () => {
   const [wordsVisible, setWordsVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
 
   // Word-reveal ao montar (above the fold — sem IntersectionObserver)
   useEffect(() => {
@@ -25,6 +27,23 @@ const Hero: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handlePlayVideo = () => {
+    setIsPlaying(true);
+    // Mobile: solicita fullscreen no container após o iframe carregar
+    const isMobile = window.innerWidth < 768;
+    if (isMobile && videoContainerRef.current) {
+      setTimeout(() => {
+        const el = videoContainerRef.current;
+        if (!el) return;
+        if (el.requestFullscreen) {
+          el.requestFullscreen().catch(() => {/* silently ignore */});
+        } else if ((el as unknown as Record<string, unknown>)['webkitRequestFullscreen']) {
+          (el as unknown as { webkitRequestFullscreen: () => void }).webkitRequestFullscreen();
+        }
+      }, 400);
+    }
+  };
 
   const renderWords = (text: string, startDelay: number) =>
     text.split(' ').map((word, i) => (
@@ -99,34 +118,58 @@ const Hero: React.FC = () => {
 
           {/* Vídeo */}
           <div className="w-full max-w-4xl mx-auto mb-10 px-4">
-            {YOUTUBE_EMBED_URL ? (
-              <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light">
-                <iframe
-                  src={YOUTUBE_EMBED_URL}
-                  title="Apresentação do Método — Escrita Acadêmica com IA"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ) : (
-              <div className="relative aspect-video bg-master-deep rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light transition-transform duration-500">
-                <div className="absolute inset-0 bg-gradient-to-tr from-master-deep via-master-slate/90 to-master-primary/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative flex flex-col items-center gap-4">
-                    <div className="relative w-20 h-20 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                      <svg className="w-7 h-7 text-white/60 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div
+              ref={videoContainerRef}
+              className="relative aspect-video rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light bg-black"
+            >
+              {isPlaying ? (
+                <>
+                  <iframe
+                    src={VIDEO_EMBED}
+                    title="Apresentação do Método — Escrita Acadêmica com IA"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    allowFullScreen
+                  />
+                  {/* Overlay transparente que bloqueia o logo do YouTube (canto inf. direito) */}
+                  <div
+                    className="absolute bottom-0 right-0 z-10 pointer-events-auto"
+                    style={{ width: '130px', height: '42px' }}
+                    aria-hidden="true"
+                  />
+                </>
+              ) : (
+                /* Facade — thumbnail + botão de play customizado */
+                <button
+                  onClick={handlePlayVideo}
+                  className="group absolute inset-0 w-full h-full flex items-center justify-center focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
+                  aria-label="Assistir apresentação do método"
+                >
+                  {/* Thumbnail YouTube */}
+                  <img
+                    src={VIDEO_THUMB}
+                    alt="Thumbnail do vídeo — Apresentação do Método com IA"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    width="1280"
+                    height="720"
+                  />
+                  {/* Gradiente sobre a thumbnail */}
+                  <div className="absolute inset-0 bg-master-deep/40 group-hover:bg-master-deep/20 transition-colors duration-300" />
+                  {/* Botão play */}
+                  <div className="relative z-10 flex flex-col items-center gap-3">
+                    <div className="w-20 h-20 flex items-center justify-center rounded-full bg-master-primary shadow-[0_0_40px_rgba(0,102,166,0.5)] group-hover:scale-110 group-hover:shadow-[0_0_60px_rgba(0,102,166,0.7)] transition-all duration-300">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
-                    <span className="text-[10px] text-white/30 font-black uppercase tracking-[0.3em] font-heading">Vídeo em breve</span>
+                    <span className="text-[10px] text-white/70 font-black uppercase tracking-[0.35em] font-heading">
+                      Assistir apresentação
+                    </span>
                   </div>
-                </div>
-                <div className="absolute bottom-6 left-8 right-8 flex items-center justify-center">
-                  <span className="text-[10px] text-white/25 font-normal">Apresentação do método — disponível em breve</span>
-                </div>
-              </div>
-            )}
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Social Proof — Bloco de Autoridade */}
