@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               A autoridade definitiva em produtividade acadêmica. Nossa missão é elevar o padrão da produção científica brasileira através da inovação ética e tecnológica.
             </p>
           </div>
-          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="md:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="text-center md:text-left">
               <p className="text-white font-black text-[10px] uppercase tracking-[0.3em] mb-8 opacity-60">Navegação</p>
               <ul className="space-y-4 text-xs text-master-light/50 font-bold uppercase tracking-widest">
@@ -30,14 +30,6 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="text-center md:text-left">
-              <p className="text-white font-black text-[10px] uppercase tracking-[0.3em] mb-8 opacity-60">Suporte</p>
-              <ul className="space-y-4 text-xs text-master-light/50 font-bold uppercase tracking-widest">
-                <li><a href="#" className="hover:text-master-accent transition-colors">Portal do Aluno</a></li>
-                <li><a href="#" className="hover:text-master-accent transition-colors">Termos</a></li>
-                <li><a href="#" className="hover:text-master-accent transition-colors">Privacidade</a></li>
-              </ul>
-            </div>
-            <div className="col-span-2 md:col-span-1 text-center md:text-left">
               <p className="text-white font-black text-[10px] uppercase tracking-[0.3em] mb-8 opacity-60">Presença Digital</p>
               <div className="flex gap-5 justify-center md:justify-start">
                 <a href="https://www.instagram.com/revisa.master/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Revisa Master" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-master-primary hover:border-transparent transition-all group">
