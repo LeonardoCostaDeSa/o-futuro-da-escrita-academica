@@ -12,6 +12,7 @@ const Hero: React.FC = () => {
   const [wordsVisible, setWordsVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [thumbOk, setThumbOk] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
@@ -131,7 +132,7 @@ const Hero: React.FC = () => {
           <div className="w-full max-w-4xl mx-auto mb-10 px-4">
             <div
               ref={videoContainerRef}
-              className="relative aspect-video rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light bg-black"
+              className="relative aspect-video rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(4,24,43,0.3)] border border-master-light bg-master-deep"
             >
               {isPlaying ? (
                 <>
@@ -160,10 +161,11 @@ const Hero: React.FC = () => {
                   <img
                     src={VIDEO_THUMB}
                     alt="Thumbnail do vídeo — Apresentação do Método com IA"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${thumbOk ? 'opacity-100' : 'opacity-0'}`}
                     loading="lazy"
                     width="480"
                     height="360"
+                    onLoad={(e) => { const img = e.target as HTMLImageElement; setThumbOk(img.naturalWidth > 120); }}
                   />
                   {/* Gradiente sobre a thumbnail */}
                   <div className="absolute inset-0 bg-master-deep/40 group-hover:bg-master-deep/20 transition-colors duration-300" />
