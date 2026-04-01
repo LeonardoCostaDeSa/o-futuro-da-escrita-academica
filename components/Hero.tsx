@@ -5,7 +5,7 @@ const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
 const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
 
 const VIDEO_ID = 'wNmiY_MldNg';
-const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/hqdefault.jpg`;
 const VIDEO_EMBED = `https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&iv_load_policy=3&autoplay=1&playsinline=1&disablekb=0&fs=1`;
 
 const Hero: React.FC = () => {
@@ -162,8 +162,8 @@ const Hero: React.FC = () => {
                     alt="Thumbnail do vídeo — Apresentação do Método com IA"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
-                    width="1280"
-                    height="720"
+                    width="480"
+                    height="360"
                   />
                   {/* Gradiente sobre a thumbnail */}
                   <div className="absolute inset-0 bg-master-deep/40 group-hover:bg-master-deep/20 transition-colors duration-300" />
