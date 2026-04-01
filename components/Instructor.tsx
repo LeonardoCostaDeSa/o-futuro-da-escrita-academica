@@ -5,7 +5,7 @@ import { useCounter } from '../hooks/useCounter';
 
 const stats = [
   { prefix: 'Mais de ', value: 3, suffix: ' anos', rest: ' aplicando IA exclusivamente para fins acadêmicos', isNum: true },
-  { prefix: 'Mais de ', value: 300, suffix: ' alunos', rest: ' acompanhados no Brasil e no exterior', isNum: true },
+  { prefix: 'Mais de ', value: 350, suffix: ' alunos', rest: ' acompanhados no Brasil e no exterior', isNum: true },
   { prefix: '', value: 0, suffix: '', rest: 'Atuação direta em TCCs, mestrados e doutorados', isNum: false },
   { prefix: '', value: 0, suffix: '', rest: 'Experiência real com insegurança metodológica, troca de orientador e prazos apertados', isNum: false },
 ];
@@ -108,7 +108,8 @@ const Instructor: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row items-start gap-3">
               <a
-                href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
+                href="#preco"
+                onClick={(e) => { e.preventDefault(); document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' }); }}
                 className="btn-shine inline-flex items-center justify-center px-12 py-5 text-xs font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
               >
                 Quero aprender com a Dra. Gabriela Verruck

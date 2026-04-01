@@ -87,11 +87,7 @@ const Pricing: React.FC = () => {
 
             <div className="relative z-10">
               <div className="mb-6">
-                {/* Badge de lançamento */}
-                <div className="inline-flex items-center gap-1.5 bg-master-gold/15 border border-master-gold/30 rounded-full px-4 py-1.5 mb-5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-master-gold animate-pulse"></div>
-                  <span className="text-[10px] font-black text-master-gold uppercase tracking-[0.2em] font-heading">Preço de lançamento</span>
-                </div>
+                <p className="text-[9px] font-black text-master-light/40 uppercase tracking-[0.4em] font-heading mb-4">Acesso completo por:</p>
 
                 <div className="flex items-baseline justify-center gap-3 mb-2">
                   <span className="text-[10px] font-bold text-master-accent uppercase font-heading tracking-[0.2em]">12x</span>

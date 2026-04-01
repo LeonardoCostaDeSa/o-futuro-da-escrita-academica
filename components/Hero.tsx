@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
 const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
 
-const VIDEO_ID = 'uupDGYEfMsQ';
+const VIDEO_ID = 'wNmiY_MldNg';
 const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
 const VIDEO_EMBED = `https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&iv_load_policy=3&autoplay=1&playsinline=1&disablekb=0&fs=1`;
 
@@ -101,14 +101,25 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Subtítulo */}
-          <p className="text-lg md:text-xl text-master-slate/80 leading-relaxed font-normal mb-8 max-w-2xl">
-            Sem tempo, sem orientação, sem saber por onde começar? O método que já ajudou 300+ pesquisadores a escrever com clareza, rigor e segurança.
+          <p className="text-lg md:text-xl text-master-slate/80 leading-relaxed font-normal mb-6 max-w-2xl">
+            Sem tempo, sem orientação, sem saber por onde começar? O método que já ajudou 350+ pesquisadores a escrever com clareza, rigor e segurança.
           </p>
+
+          {/* Badge de prova social */}
+          <div className="inline-flex items-center gap-2 bg-master-offwhite border border-master-light rounded-full px-5 py-2 mb-8 text-xs font-normal text-master-slate/70">
+            <span className="text-amber-400 text-sm">⭐</span>
+            <span><strong className="font-black text-master-deep">5,0</strong> no Google</span>
+            <span className="text-master-light/70">·</span>
+            <span><strong className="font-black text-master-deep">45+</strong> avaliações</span>
+            <span className="text-master-light/70">·</span>
+            <span><strong className="font-black text-master-deep">350+</strong> alunos formados</span>
+          </div>
 
           {/* CTA primário — acima do fold no mobile */}
           <div id="hero-cta" className="flex flex-col items-center gap-3 mb-14">
             <a
-              href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
+              href="#preco"
+              onClick={(e) => { e.preventDefault(); document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' }); }}
               className="btn-shine flex items-center justify-center px-14 py-5 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-deep transition-all shadow-[0_20px_50px_-10px_rgba(0,102,166,0.3)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2"
             >
               Quero escrever com método
@@ -164,7 +175,7 @@ const Hero: React.FC = () => {
                       </svg>
                     </div>
                     <span className="text-[10px] text-white/70 font-black uppercase tracking-[0.35em] font-heading">
-                      Assistir apresentação
+                      ▶ Assista em 3 min como o método funciona
                     </span>
                   </div>
                 </button>
@@ -179,16 +190,16 @@ const Hero: React.FC = () => {
             </p>
             <div className="grid grid-cols-3 divide-x divide-master-light/70 bg-master-offwhite/70 border border-master-light/70 rounded-t-none rounded-b-2xl overflow-hidden shadow-sm">
               <div className="py-6 px-3 md:px-5 text-center">
-                <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">300+</p>
+                <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">350+</p>
                 <p className="text-[10px] text-master-slate/55 font-normal leading-snug">pesquisadores<br/>formados</p>
+              </div>
+              <div className="py-6 px-3 md:px-5 text-center">
+                <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">45+</p>
+                <p className="text-[10px] text-master-slate/55 font-normal leading-snug">avaliações 5★<br/>no Google</p>
               </div>
               <div className="py-6 px-3 md:px-5 text-center flex flex-col items-center justify-center">
                 <p className="text-xs font-black text-master-primary font-heading tracking-[0.08em] uppercase leading-tight mb-2">TCC · Mestrado<br/>Doutorado</p>
                 <p className="text-[10px] text-master-slate/55 font-normal leading-snug">todos os níveis acadêmicos</p>
-              </div>
-              <div className="py-6 px-3 md:px-5 text-center">
-                <p className="text-3xl md:text-4xl font-black text-master-deep font-heading tracking-tight leading-none mb-2">3 anos</p>
-                <p className="text-[10px] text-master-slate/55 font-normal leading-snug">aplicando IA<br/>na academia</p>
               </div>
             </div>
           </div>

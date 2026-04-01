@@ -37,17 +37,21 @@ const FinalCTA: React.FC = () => {
           </div>
 
           <h2 className="text-4xl sm:text-5xl font-black font-heading uppercase tracking-tighter leading-[1.05] mb-6 text-white">
-            Você pode continuar<br/>
-            <span className="text-white/55 font-light italic lowercase font-sans">improvisando.</span>
+            Sua banca<br/>
+            <span className="text-white/55 font-light italic lowercase font-sans">não vai esperar.</span>
           </h2>
 
-          <p className="text-2xl sm:text-3xl font-black font-heading text-white mb-4 leading-tight">
-            Ou pode defender seu trabalho<br/>
-            <span className="text-master-accent">com estrutura.</span>
+          <p className="text-xl sm:text-2xl font-normal font-sans text-master-light/70 mb-4 leading-relaxed max-w-xl mx-auto">
+            Cada semana sem método é uma semana a mais de paralisia.
           </p>
 
-          <p className="text-master-light/40 text-base font-normal mb-14 max-w-xl mx-auto leading-relaxed">
-            A diferença não é talento. É método. E método pode ser aprendido — agora.
+          <p className="text-master-light/50 text-base font-normal mb-4 max-w-xl mx-auto leading-relaxed">
+            Você pode continuar tentando sozinho.<br/>
+            Ou pode começar hoje com um sistema que <strong className="text-white font-black">350+ pesquisadores</strong> já usaram.
+          </p>
+
+          <p className="text-master-accent font-black text-sm uppercase tracking-[0.2em] font-heading mb-14">
+            Por menos de R$10/mês.
           </p>
         </div>
 
@@ -56,12 +60,12 @@ const FinalCTA: React.FC = () => {
             href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
             className="btn-shine inline-flex items-center justify-center px-16 py-6 text-sm font-black rounded-2xl text-white bg-master-primary hover:bg-master-accent transition-all shadow-[0_20px_60px_-10px_rgba(0,102,166,0.5)] uppercase tracking-[0.2em] font-heading hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2 focus-visible:ring-offset-master-deep"
           >
-            Quero garantir minha vaga agora
+            Quero garantir minha vaga — 12x R$10,03
           </a>
 
           {/* Linha de garantia */}
           <p className="text-master-light/30 text-xs font-normal tracking-wide">
-            7 dias de garantia · Acesso imediato · Sem mensalidade
+            Garantia de 7 dias · Acesso imediato · Sem mensalidade
           </p>
         </div>
 
