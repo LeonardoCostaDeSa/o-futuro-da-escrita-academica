@@ -35,8 +35,8 @@ const StickyCTA: React.FC = () => {
     >
       <div className="bg-white/95 backdrop-blur-xl border-t border-master-light/50 px-4 py-3 flex items-center justify-between gap-3">
         <div className="flex flex-col">
-          <span className="text-xs font-black text-master-deep font-heading">12x R$35,89</span>
-          <span className="text-[10px] text-master-slate/50 font-normal">ou R$347 à vista</span>
+          <span className="text-xs font-black text-master-deep font-heading">12x R$10,03</span>
+          <span className="text-[10px] text-master-slate/50 font-normal">ou R$97 à vista</span>
         </div>
         <a
           href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
