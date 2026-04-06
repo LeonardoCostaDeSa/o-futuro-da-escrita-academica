@@ -13,6 +13,7 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import PainDivider from './components/PainDivider';
 import StickyCTA from './components/StickyCTA';
+import SocialProofToast from './components/SocialProofToast';
 
 const App: React.FC = () => {
   return (
@@ -42,6 +43,7 @@ const App: React.FC = () => {
       </main>
       <Footer />
       <StickyCTA />
+      <SocialProofToast />
     </div>
   );
 };
