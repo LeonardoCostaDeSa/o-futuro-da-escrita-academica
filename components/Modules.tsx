@@ -250,7 +250,7 @@ const Modules: React.FC = () => {
               300+ pesquisadores já aplicaram este método. Agora é a sua vez.
             </p>
             <a
-              href="https://pay.hotmart.com/O104206161Q" target="_blank" rel="noopener noreferrer"
+              href="https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775660805600" target="_blank" rel="noopener noreferrer"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });
