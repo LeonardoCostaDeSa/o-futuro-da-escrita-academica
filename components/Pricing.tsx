@@ -116,7 +116,7 @@ const Pricing: React.FC = () => {
               </div>
 
               <a
-                href="https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775660805600"
+                href="https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775682904432"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shine block w-full py-6 px-8 rounded-2xl font-black text-sm transition-all uppercase tracking-[0.3em] font-heading bg-master-primary border-2 border-master-primary text-white hover:bg-master-accent hover:border-master-accent shadow-2xl shadow-master-primary/20 mb-4 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2 text-center"
