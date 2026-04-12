@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
-
-const HOTMART_URL = 'https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775682904432';
+import { HOTMART_URL } from '../config';
 
 const navLinks = [
   { label: 'O Método', id: 'sobre' },

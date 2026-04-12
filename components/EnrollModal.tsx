@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { HOTMART_URL, PRICE_FULL, PRICE_INSTALLMENTS, PRICE_INSTALLMENT_VALUE } from '../config';
 
 interface EnrollModalProps {
   isOpen: boolean;
@@ -73,9 +74,9 @@ const EnrollModal: React.FC<EnrollModalProps> = ({ isOpen, onClose }) => {
           {/* Preço */}
           <div className="flex items-baseline gap-3 mb-6">
             <span className="text-[10px] font-black text-master-accent uppercase tracking-[0.2em] font-heading">12x</span>
-            <span className="text-5xl font-black text-master-deep tracking-tighter font-heading">R$10,03</span>
+            <span className="text-5xl font-black text-master-deep tracking-tighter font-heading">R${PRICE_INSTALLMENT_VALUE}</span>
           </div>
-          <p className="text-master-slate/50 text-sm mb-8">ou R$97 à vista no Pix</p>
+          <p className="text-master-slate/50 text-sm mb-8">ou R${PRICE_FULL} à vista no Pix</p>
 
           {/* Formas de pagamento */}
           <div className="grid grid-cols-2 gap-3 mb-8">

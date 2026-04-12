@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
 import EnrollModal from './EnrollModal';
+import { HOTMART_URL, PRICE_FULL, PRICE_INSTALLMENTS, PRICE_INSTALLMENT_VALUE } from '../config';
 
 const benefits = [
   "Acesso vitalício a todos os 9 módulos + atualizações futuras",
@@ -49,7 +50,7 @@ const Pricing: React.FC = () => {
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center justify-between text-xs">
                   <span className="text-master-light/85 font-normal">Curso completo — 9 módulos</span>
-                  <span className="text-master-light/40 line-through font-normal">R$97</span>
+                  <span className="text-master-light/40 line-through font-normal">R${PRICE_FULL}</span>
                 </li>
                 <li className="flex items-center justify-between text-xs">
                   <span className="text-master-light/85 font-normal">Bônus 01 — Checklist de Objetivo</span>
@@ -71,7 +72,7 @@ const Pricing: React.FC = () => {
                 </div>
                 <div className="text-right">
                   <span className="text-master-light/40 line-through text-sm mr-2">R$638</span>
-                  <span className="text-master-accent font-black text-sm font-heading">R$97</span>
+                  <span className="text-master-accent font-black text-sm font-heading">R${PRICE_FULL}</span>
                 </div>
               </div>
             </div>
@@ -90,10 +91,10 @@ const Pricing: React.FC = () => {
                 <p className="text-[9px] font-black text-master-light/40 uppercase tracking-[0.4em] font-heading mb-4">Acesso completo por:</p>
 
                 <div className="flex items-baseline justify-center gap-3 mb-2">
-                  <span className="text-[10px] font-bold text-master-accent uppercase font-heading tracking-[0.2em]">12x</span>
-                  <span className="text-7xl font-black tracking-tighter font-heading">R$10,03</span>
+                  <span className="text-[10px] font-bold text-master-accent uppercase font-heading tracking-[0.2em]">{PRICE_INSTALLMENTS}x</span>
+                  <span className="text-7xl font-black tracking-tighter font-heading">R${PRICE_INSTALLMENT_VALUE}</span>
                 </div>
-                <p className="text-master-light/40 text-sm">ou R$97 à vista</p>
+                <p className="text-master-light/40 text-sm">ou R${PRICE_FULL} à vista</p>
               </div>
 
               <p className="text-master-light/50 text-sm leading-relaxed mb-10 max-w-sm mx-auto font-normal">
@@ -116,12 +117,12 @@ const Pricing: React.FC = () => {
               </div>
 
               <a
-                href="https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775682904432"
+                href={HOTMART_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shine block w-full py-6 px-8 rounded-2xl font-black text-sm transition-all uppercase tracking-[0.3em] font-heading bg-master-primary border-2 border-master-primary text-white hover:bg-master-accent hover:border-master-accent shadow-2xl shadow-master-primary/20 mb-4 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-master-accent focus-visible:ring-offset-2 text-center"
               >
-                Quero começar agora — 12x de R$10,03
+                Quero começar agora — {PRICE_INSTALLMENTS}x de R${PRICE_INSTALLMENT_VALUE}
               </a>
               <div className="flex items-center justify-center gap-1.5 text-master-light/60 mb-4">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

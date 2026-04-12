@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { COURSE_MODULES } from '../constants';
 import { Module } from '../types';
+import { HOTMART_URL } from '../config';
 
 const PHASES = [
   { label: 'Fase 1 — Fundação', ids: [1, 2, 3, 4], description: 'Antes de escrever, você precisa entender a ferramenta.', accentColor: 'bg-master-primary/60' },
@@ -250,7 +251,7 @@ const Modules: React.FC = () => {
               300+ pesquisadores já aplicaram este método. Agora é a sua vez.
             </p>
             <a
-              href="https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775682904432" target="_blank" rel="noopener noreferrer"
+              href={HOTMART_URL} target="_blank" rel="noopener noreferrer"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' });

@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import { PRICE_INSTALLMENTS, PRICE_INSTALLMENT_VALUE } from '../config';
 
 const HEADLINE_LINE1 = 'Pare de travar na escrita acadêmica';
 const HEADLINE_LINE2 = 'Escreva como pesquisador, defenda com mérito';
@@ -125,7 +126,7 @@ const Hero: React.FC = () => {
             >
               Quero escrever com método
             </a>
-            <span className="text-xs text-master-slate/40 font-normal">12x de R$10,03 · Acesso imediato</span>
+            <span className="text-xs text-master-slate/40 font-normal">{PRICE_INSTALLMENTS}x de R${PRICE_INSTALLMENT_VALUE} · Acesso imediato</span>
           </div>
 
           {/* Vídeo */}

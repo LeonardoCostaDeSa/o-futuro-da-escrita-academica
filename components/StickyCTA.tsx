@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { HOTMART_URL, PRICE_FULL, PRICE_INSTALLMENTS, PRICE_INSTALLMENT_VALUE } from '../config';
 
 const StickyCTA: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -35,11 +36,11 @@ const StickyCTA: React.FC = () => {
     >
       <div className="bg-white/95 backdrop-blur-xl border-t border-master-light/50 px-4 py-3 flex items-center justify-between gap-3">
         <div className="flex flex-col">
-          <span className="text-xs font-black text-master-deep font-heading">12x R$10,03</span>
-          <span className="text-[10px] text-master-slate/50 font-normal">ou R$97 à vista</span>
+          <span className="text-xs font-black text-master-deep font-heading">{PRICE_INSTALLMENTS}x R${PRICE_INSTALLMENT_VALUE}</span>
+          <span className="text-[10px] text-master-slate/50 font-normal">ou R${PRICE_FULL} à vista</span>
         </div>
         <a
-          href="https://pay.hotmart.com/O104206161Q?checkoutMode=10&bid=1775682904432" target="_blank" rel="noopener noreferrer"
+          href={HOTMART_URL} target="_blank" rel="noopener noreferrer"
           className="btn-shine flex-shrink-0 px-6 py-3 bg-master-primary text-white text-[10px] font-black rounded-xl uppercase tracking-[0.2em] font-heading hover:bg-master-deep transition-all active:scale-95"
         >
           Quero começar

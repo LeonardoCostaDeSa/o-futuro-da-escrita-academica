@@ -7,8 +7,29 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Build & Deploy to VPS
+    name: Build & Deploy — ${{ matrix.site_name }}
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          # ── Site principal ───────────────────────────────────────────────
+          - site_name: site-principal
+            vps_path: /var/www/o-futuro-da-escrita-academica
+            hotmart_url:            ${{ secrets.HOTMART_URL_PRINCIPAL }}
+            price_full:             ${{ secrets.PRICE_FULL_PRINCIPAL }}
+            price_installments:     ${{ secrets.PRICE_INSTALLMENTS_PRINCIPAL }}
+            price_installment_value: ${{ secrets.PRICE_INSTALLMENT_VALUE_PRINCIPAL }}
+            restart_compose: true
+
+          # ── Variante A (subdomínio diferente, preço diferente) ────────────
+          - site_name: variante-a
+            vps_path: /var/www/variante-a
+            hotmart_url:            ${{ secrets.HOTMART_URL_A }}
+            price_full:             ${{ secrets.PRICE_FULL_A }}
+            price_installments:     ${{ secrets.PRICE_INSTALLMENTS_A }}
+            price_installment_value: ${{ secrets.PRICE_INSTALLMENT_VALUE_A }}
+            restart_compose: false
 
     steps:
       - name: Checkout código
@@ -23,8 +44,13 @@ jobs:
       - name: Instalar dependências
         run: npm ci --legacy-peer-deps
 
-      - name: Build de produção
+      - name: Build de produção (${{ matrix.site_name }})
         run: npm run build
+        env:
+          VITE_HOTMART_URL:             ${{ matrix.hotmart_url }}
+          VITE_PRICE_FULL:              ${{ matrix.price_full }}
+          VITE_PRICE_INSTALLMENTS:      ${{ matrix.price_installments }}
+          VITE_PRICE_INSTALLMENT_VALUE: ${{ matrix.price_installment_value }}
 
       - name: Configurar chave SSH
         run: |
@@ -33,14 +59,15 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Enviar dist/ para a VPS
+      - name: Enviar dist/ para a VPS — ${{ matrix.site_name }}
         run: |
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             dist/ \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/o-futuro-da-escrita-academica/
+            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ matrix.vps_path }}/
 
-      - name: Restartar container
+      - name: Restartar container (site-principal)
+        if: matrix.restart_compose == true
         run: |
           ssh -i ~/.ssh/deploy_key \
             -o StrictHostKeyChecking=no \

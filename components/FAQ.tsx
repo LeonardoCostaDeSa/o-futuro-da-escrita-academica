@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
+import { PRICE_FULL, PRICE_INSTALLMENTS, PRICE_INSTALLMENT_VALUE } from '../config';
 
 const faqs = [
   {
@@ -28,12 +29,12 @@ const faqs = [
     a: "A confusão aqui é entre uso generativo e uso metodológico. Copiar texto de IA é um risco real — e o método te ensina exatamente por que isso é um problema. Usar IA para organizar raciocínio, revisar estrutura e mapear fontes — com auditoria sua sobre cada etapa — é uma prática diferente, rastreável e defensável. O método te ensina a documentar seu processo de forma que qualquer orientador possa acompanhar e validar.",
   },
   {
-    q: "R$97 é muito para o meu momento atual.",
+    q: `R$${PRICE_FULL} é muito para o meu momento atual.`,
     a: "Entendo a preocupação — e ela merece uma resposta honesta. Uma hora com um orientador particular custa, em média, mais do que o valor total do curso. Aqui você tem um sistema aplicável agora, nas próximas sessões de escrita, e que continua válido do TCC ao doutorado — incluindo 3 bônus com valor de R$291. Além disso, existe a garantia de 7 dias: se você entrar, acessar o conteúdo e sentir que não vale, devolvemos tudo. O risco financeiro é zero.",
   },
   {
     q: "Quais são as formas de pagamento?",
-    a: "O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até 12x de R$10,03 — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$97 à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.",
+    a: `O curso pode ser adquirido via cartão de crédito ou Pix. No cartão, o pagamento pode ser parcelado em até ${PRICE_INSTALLMENTS}x de R$${PRICE_INSTALLMENT_VALUE} — são aceitas todas as principais bandeiras, incluindo Visa, Mastercard, Elo e Hipercard. No Pix, o valor é R$${PRICE_FULL} à vista. Em ambos os casos, o acesso é liberado automaticamente assim que o pagamento é confirmado, sem nenhuma etapa adicional da sua parte.`,
   },
   {
     q: "Como sei se este método realmente funciona para o meu caso?",
