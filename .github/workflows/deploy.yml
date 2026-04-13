@@ -9,26 +9,27 @@ jobs:
   build-and-deploy:
     name: Build & Deploy — ${{ matrix.site_name }}
     runs-on: ubuntu-latest
+    environment: ${{ matrix.environment_name }}
 
     strategy:
       matrix:
         include:
           # ── Site principal ───────────────────────────────────────────────
           - site_name: site-principal
+            environment_name: LP_CEIA_RM
             vps_path: /var/www/o-futuro-da-escrita-academica
-            hotmart_url:            ${{ secrets.HOTMART_URL_PRINCIPAL }}
-            price_full:             ${{ secrets.PRICE_FULL_PRINCIPAL }}
-            price_installments:     ${{ secrets.PRICE_INSTALLMENTS_PRINCIPAL }}
-            price_installment_value: ${{ secrets.PRICE_INSTALLMENT_VALUE_PRINCIPAL }}
             restart_compose: true
 
-          # ── Variante A (subdomínio diferente, preço diferente) ────────────
-          - site_name: variante-a
-            vps_path: /var/www/variante-a
-            hotmart_url:            ${{ secrets.HOTMART_URL_A }}
-            price_full:             ${{ secrets.PRICE_FULL_A }}
-            price_installments:     ${{ secrets.PRICE_INSTALLMENTS_A }}
-            price_installment_value: ${{ secrets.PRICE_INSTALLMENT_VALUE_A }}
+          # ── Variante 1 ───────────────────────────────────────────────────
+          - site_name: variante-1
+            environment_name: LP_CEIA_RM_VAR_1
+            vps_path: /var/www/variante-1
+            restart_compose: false
+
+          # ── Variante 2 ───────────────────────────────────────────────────
+          - site_name: variante-2
+            environment_name: LP_CEIA_RM_VAR_2
+            vps_path: /var/www/variante-2
             restart_compose: false
 
     steps:
@@ -47,10 +48,10 @@ jobs:
       - name: Build de produção (${{ matrix.site_name }})
         run: npm run build
         env:
-          VITE_HOTMART_URL:             ${{ matrix.hotmart_url }}
-          VITE_PRICE_FULL:              ${{ matrix.price_full }}
-          VITE_PRICE_INSTALLMENTS:      ${{ matrix.price_installments }}
-          VITE_PRICE_INSTALLMENT_VALUE: ${{ matrix.price_installment_value }}
+          VITE_HOTMART_URL:             ${{ secrets.HOTMART_URL }}
+          VITE_PRICE_FULL:              ${{ secrets.PRICE_FULL }}
+          VITE_PRICE_INSTALLMENTS:      ${{ secrets.PRICE_INSTALLMENTS }}
+          VITE_PRICE_INSTALLMENT_VALUE: ${{ secrets.PRICE_INSTALLMENT_VALUE }}
 
       - name: Configurar chave SSH
         run: |
