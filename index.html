@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Questrial&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,300;1,400&family=Questrial&display=swap"
       rel="stylesheet"
     />
 
@@ -113,9 +113,13 @@
     }
     </script>
 
-    <!-- Meta Pixel — carregado após o load para não bloquear FCP/LCP -->
+    <!-- Meta Pixel — LGPD: NÃO dispara no carregamento. A função é definida aqui,
+         mas só é executada após consentimento explícito do usuário, pelo banner de
+         cookies (components/CookieConsent.tsx). Enquanto não houver aceite, nenhum
+         contato com o Facebook acontece (fbevents.js não é carregado). -->
     <script>
-      window.addEventListener('load', function () {
+      window.initFacebookPixel = function () {
+        if (window.fbq) return;
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -126,18 +130,13 @@
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '24542576182109764');
         fbq('track', 'PageView');
-      });
+      };
     </script>
 
     <!-- CSS principal (Tailwind + animações) — injetado pelo Vite build -->
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=24542576182109764&ev=PageView&noscript=1"
-      />
-    </noscript>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

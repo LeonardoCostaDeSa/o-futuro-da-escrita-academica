@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import PainDivider from './components/PainDivider';
 import StickyCTA from './components/StickyCTA';
 import SocialProofToast from './components/SocialProofToast';
+import CookieConsent from './components/CookieConsent';
 
 const App: React.FC = () => {
   return (
@@ -44,6 +45,7 @@ const App: React.FC = () => {
       <Footer />
       <StickyCTA />
       <SocialProofToast />
+      <CookieConsent />
     </div>
   );
 };

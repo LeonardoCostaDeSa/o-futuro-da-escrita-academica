@@ -48,14 +48,17 @@ const Instructor: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-6 border border-master-light rounded-[2.5rem] -rotate-2 pointer-events-none"></div>
               <div className="relative overflow-hidden rounded-[2rem] shadow-2xl border-4 border-white">
-                <img
-                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000"
-                  src="/imgs/image_Gabriela.png"
-                  alt="Dra. Gabriela Verruck — Doutora em Ciências pela USP, especialista em escrita acadêmica com IA"
-                  loading="lazy"
-                  width={600}
-                  height={600}
-                />
+                <picture>
+                  <source srcSet="/imgs/image_Gabriela.webp" type="image/webp" />
+                  <img
+                    className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000"
+                    src="/imgs/image_Gabriela.png"
+                    alt="Dra. Gabriela Verruck — Doutora em Ciências pela USP, especialista em escrita acadêmica com IA"
+                    loading="lazy"
+                    width={600}
+                    height={600}
+                  />
+                </picture>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-master-deep via-master-deep/70 to-transparent p-10">
                   <p className="text-white font-black text-xl font-heading tracking-tighter uppercase leading-none">Dra. Gabriela Verruck</p>
                   <p className="text-white/80 text-xs font-bold uppercase tracking-[0.3em] mt-2">Doutora em Ciências · USP</p>
