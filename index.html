@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Questrial&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,300;1,400&family=Questrial&display=swap"
       rel="stylesheet"
     />
 
@@ -113,20 +113,20 @@
     }
     </script>
 
-    <!-- Meta Pixel — carregado após o load para não bloquear FCP/LCP -->
+    <!-- Meta Pixel — dispara imediatamente (script async, não bloqueia render).
+         O PageView é enfileirado na hora, garantindo a contagem mesmo de quem
+         sai antes do carregamento completo (fecha a subcontagem de visualizações). -->
     <script>
-      window.addEventListener('load', function () {
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window,document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '24542576182109764');
-        fbq('track', 'PageView');
-      });
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '24542576182109764');
+      fbq('track', 'PageView');
     </script>
 
     <!-- CSS principal (Tailwind + animações) — injetado pelo Vite build -->
