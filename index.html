@@ -113,31 +113,30 @@
     }
     </script>
 
-    <!-- Meta Pixel — dispara imediatamente (script async, não bloqueia render).
-         O PageView é enfileirado na hora, garantindo a contagem mesmo de quem
-         sai antes do carregamento completo (fecha a subcontagem de visualizações). -->
+    <!-- Meta Pixel — LGPD: NÃO dispara no carregamento. A função é definida aqui,
+         mas só é executada após consentimento explícito do usuário, pelo banner de
+         cookies (components/CookieConsent.tsx). Enquanto não houver aceite, nenhum
+         contato com o Facebook acontece (fbevents.js não é carregado). -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '24542576182109764');
-      fbq('track', 'PageView');
+      window.initFacebookPixel = function () {
+        if (window.fbq) return;
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '24542576182109764');
+        fbq('track', 'PageView');
+      };
     </script>
 
     <!-- CSS principal (Tailwind + animações) — injetado pelo Vite build -->
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=24542576182109764&ev=PageView&noscript=1"
-      />
-    </noscript>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
