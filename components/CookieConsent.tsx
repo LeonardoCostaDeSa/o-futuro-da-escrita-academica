@@ -22,6 +22,7 @@ const PRIVACY_POLICY_URL = '';
 declare global {
   interface Window {
     initFacebookPixel?: () => void;
+    initMicrosoftClarity?: () => void;
   }
 }
 
@@ -40,6 +41,7 @@ const CookieConsent: React.FC = () => {
 
     if (consent === 'granted') {
       window.initFacebookPixel?.();
+      window.initMicrosoftClarity?.();
     } else if (consent !== 'denied') {
       setVisible(true);
     }
@@ -56,6 +58,7 @@ const CookieConsent: React.FC = () => {
   const accept = () => {
     persist('granted');
     window.initFacebookPixel?.();
+    window.initMicrosoftClarity?.();
     setVisible(false);
   };
 
