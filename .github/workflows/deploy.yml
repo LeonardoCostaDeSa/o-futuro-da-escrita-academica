@@ -49,10 +49,10 @@ jobs:
       - name: Build de produção (${{ matrix.site_name }})
         run: npm run build
         env:
-          VITE_HOTMART_URL:             ${{ secrets.HOTMART_URL }}
-          VITE_PRICE_FULL:              ${{ secrets.PRICE_FULL }}
-          VITE_PRICE_INSTALLMENTS:      ${{ secrets.PRICE_INSTALLMENTS }}
-          VITE_PRICE_INSTALLMENT_VALUE: ${{ secrets.PRICE_INSTALLMENT_VALUE }}
+          VITE_HOTMART_URL:             https://pay.hotmart.com/O104206161Q?off=ozhq6dsd
+          VITE_PRICE_FULL:              '147'
+          VITE_PRICE_INSTALLMENTS:      '12'
+          VITE_PRICE_INSTALLMENT_VALUE: '15,20'
 
       - name: Configurar chave SSH
         run: |
