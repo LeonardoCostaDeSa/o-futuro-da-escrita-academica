@@ -12,6 +12,7 @@ jobs:
     environment: ${{ matrix.environment_name }}
 
     strategy:
+      fail-fast: false
       matrix:
         include:
           # ── Site principal ───────────────────────────────────────────────
