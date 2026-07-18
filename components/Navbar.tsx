@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { HOTMART_URL } from '../config';
+import { PRICE_INSTALLMENTS, PRICE_INSTALLMENT_VALUE } from '../config';
 
 const navLinks = [
   { label: 'O Método', id: 'sobre' },
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
             onClick={(e) => { e.preventDefault(); document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' }); setIsOpen(false); }}
             className="btn-shine mt-4 flex items-center justify-center px-8 py-4 bg-master-primary text-white text-[10px] font-black rounded-2xl hover:bg-master-deep transition-all uppercase tracking-[0.25em] font-heading"
           >
-            Matricule-se — 12x R$10,03
+            Matricule-se — {PRICE_INSTALLMENTS}x R${PRICE_INSTALLMENT_VALUE}
           </a>
         </div>
       </div>

@@ -68,10 +68,10 @@ const Pricing: React.FC = () => {
               <div className="border-t border-white/10 pt-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-black text-master-light/50 font-heading uppercase tracking-wider">Total em conteúdo</span>
-                  <span className="inline-flex items-center bg-master-green/15 border border-master-green/30 rounded-full px-2.5 py-0.5 text-[9px] font-black text-master-green uppercase tracking-wider font-heading">-46%</span>
+                  <span className="inline-flex items-center bg-master-green/15 border border-master-green/30 rounded-full px-2.5 py-0.5 text-[9px] font-black text-master-green uppercase tracking-wider font-heading">-66%</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-master-light/40 line-through text-sm mr-2">R$638</span>
+                  <span className="text-master-light/40 line-through text-sm mr-2">R$438</span>
                   <span className="text-master-accent font-black text-sm font-heading">R${PRICE_FULL}</span>
                 </div>
               </div>

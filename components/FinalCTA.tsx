@@ -52,7 +52,7 @@ const FinalCTA: React.FC = () => {
           </p>
 
           <p className="text-master-accent font-black text-sm uppercase tracking-[0.2em] font-heading mb-14">
-            Por menos de R$10/mês.
+            Por R$15,20/mês.
           </p>
         </div>
 
